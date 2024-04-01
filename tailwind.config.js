@@ -6,7 +6,23 @@ export default {
   ],
   darkMode: 'class',
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: 'rgb(15 23 42)',
+        secondary: '',
+        black: '#16161c',
+        white: '#ffffff',
+        grey: '#D9D9D9',
+        darkGrey: '#272828',
+      },
+      backgroundImage: {
+
+      },
+      fontFamily: {
+        kanit: 'Kanit',
+        poppins: 'Poppins'
+      }
+    },
   },
   plugins: [],
 }
