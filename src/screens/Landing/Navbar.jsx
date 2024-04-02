@@ -16,7 +16,7 @@ const Navbar = () => {
             <NavLink
                 reloadDocument
                 className="text-white text-3xl md:text-5xl font-kanit">
-                <p>Mani Recruits</p>
+                <p>Logo</p>
             </NavLink>
 
             <div className="hidden md:flex flex-row gap-5 text-primary">
@@ -28,7 +28,8 @@ const Navbar = () => {
                 onClick={toggleNav}>
                 {
                     isOpen ?
-                        <MenuHotdog className="h-10 w-10 text-white" /> : <MenuHamburger className="h-10 w-10 text-white" />
+                        <MenuHotdog className="h-10 w-10 text-white" /> :
+                        <MenuHamburger className="h-10 w-10 text-white" />
                 }
             </div>
 
@@ -45,18 +46,25 @@ const Navbar = () => {
 }
 
 function NavLinks() {
-    const navbarStyling = "hover:scale-[1.1] hover:text-orange-300 font-poppins text-[14px] cursor-pointer transition-all md:bg-transparent w-full text-center"
+    const navbarStyling = "hover:scale-[1.1] hover:text-white text-idle font-poppins text-[14px] cursor-pointer transition-all w-full text-nowrap"
+
     return (
-        <div className='text-2xl font- text-white flex flex-col justify-center md:flex-row gap-4 items-center'>
+        <div className='flex flex-col justify-center md:flex-row gap-4 items-center mt-3'>
             {/* Landing Page Links */}
-            <Link reloadDocument className={navbarStyling}>Home</Link>
             <a className={navbarStyling} href="#about">About</a>
+            <a className={navbarStyling} href="#about">Our Team</a>
+            <a className={navbarStyling} href="#about">Our Services</a>
             <a className={navbarStyling} href="#contact">Contact</a>
 
             {/* Job Portal Link */}
             <Link to={'#'} className={navbarStyling}>Portal</Link>
 
             {/* Login and Signup Buttons */}
+            <Link
+                className="rounded-lg w-full bg-white px-8 py-2 text-black text-[14px] font-poppins text-nowrap hover:bg-primary hover:text-white border-2 hover:border-white border-white text-center">
+                Sign Up
+            </Link>
+
         </div >
     )
 }

@@ -16,7 +16,8 @@ export default {
         darkGrey: '#272828',
         success: '#6AB04C',
         danger: '#eb4d4b',
-        info: '#1289A7'
+        info: '#1289A7',
+        idle: 'rgba(255, 255, 255, 0.5)'
       },
       backgroundImage: {
 
