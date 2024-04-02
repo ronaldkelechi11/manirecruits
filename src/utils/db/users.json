@@ -1,0 +1,56 @@
+[
+    {
+        "personal_information": {
+            "firstname": "",
+            "lastname": "",
+            "username": "",
+            "email_address": "",
+            "password": "",
+            "profile_picture": "",
+            "date_of_birth": ""
+        },
+        "authentication": {
+            "password": ""
+        },
+        "contact_information": {
+            "address": "",
+            "phone_number": ""
+        },
+        "professional_information": {
+            "work_experience": [],
+            "education_background": [],
+            "skills": [],
+            "industry_job_preferences": []
+        },
+        "additional_details": {
+            "linkedin_profile": "",
+            "facebook_profile": "",
+            "instagram_profile": "",
+            "personal_website": "",
+            "portfolio": ""
+        },
+        "preferences": {
+            "preferred_job_locations": [],
+            "desired_salary_range": "",
+            "notification_preferences": []
+        },
+        "interests_and_activities": {
+            "hobbies": [],
+            "professional_associations": [],
+            "volunteer_work": []
+        },
+        "feedback_and_reviews": {
+            "employer_feedback": [],
+            "ratings_and_reviews": []
+        },
+        "application_history": {
+            "applied_jobs": [],
+            "application_status": {}
+        },
+        "communication_history": {
+            "messages_with_employers": [],
+            "interview_schedules": [],
+            "follow_up_communication": []
+        }
+    }
+]
