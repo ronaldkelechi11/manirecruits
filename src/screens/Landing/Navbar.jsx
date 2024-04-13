@@ -51,7 +51,7 @@ function NavLinks() {
     return (
         <div className='flex flex-col justify-center md:flex-row gap-4 items-center mt-3'>
             {/* Landing Page Links */}
-            <a className={navbarStyling} href="#about">About</a>
+            <a className={navbarStyling} href="#about">About Us</a>
             <a className={navbarStyling} href="#services">Our Services</a>
             <a className={navbarStyling} href="#contact">Contact</a>
 

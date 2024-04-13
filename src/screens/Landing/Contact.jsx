@@ -2,7 +2,7 @@ import React from 'react'
 
 const Contact = () => {
     return (
-        <div>
+        <div className='w-screen h-screen bg-pink-200'>
 
         </div>
     )
