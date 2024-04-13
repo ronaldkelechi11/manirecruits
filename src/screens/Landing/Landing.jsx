@@ -2,6 +2,7 @@ import About from "./About"
 import Footer from "./Footer"
 import Hero from "./Hero"
 import Navbar from "./Navbar"
+import Services from "./Services"
 
 const Landing = () => {
     return (
@@ -9,6 +10,7 @@ const Landing = () => {
             <Navbar />
             <Hero />
             <About />
+            <Services />
             <Footer />
         </div>
     )

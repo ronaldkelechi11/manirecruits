@@ -46,21 +46,17 @@ const Navbar = () => {
 }
 
 function NavLinks() {
-    const navbarStyling = "hover:scale-[1.1] hover:text-white text-idle font-poppins text-[14px] cursor-pointer transition-all w-full text-nowrap"
+    const navbarStyling = "md:hover:scale-[1.1] hover:text-white text-idle font-poppins text-[14px] cursor-pointer transition-all w-full text-nowrap"
 
     return (
         <div className='flex flex-col justify-center md:flex-row gap-4 items-center mt-3'>
             {/* Landing Page Links */}
             <a className={navbarStyling} href="#about">About</a>
-            <a className={navbarStyling} href="#about">Our Team</a>
-            <a className={navbarStyling} href="#about">Our Services</a>
+            <a className={navbarStyling} href="#services">Our Services</a>
             <a className={navbarStyling} href="#contact">Contact</a>
 
-            {/* Job Portal Link */}
-            <Link to={'#'} className={navbarStyling}>Portal</Link>
-
             {/* Login and Signup Buttons */}
-            <Link
+            <Link to={'/signup'}
                 className="rounded-lg w-full bg-white px-8 py-2 text-black text-[14px] font-poppins text-nowrap hover:bg-primary hover:text-white border-2 hover:border-white border-white text-center">
                 Sign Up
             </Link>
