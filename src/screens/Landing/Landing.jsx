@@ -1,4 +1,5 @@
 import About from "./About"
+import Clients from "./Clients"
 import Contact from "./Contact"
 import Footer from "./Footer"
 import Hero from "./Hero"
@@ -12,6 +13,7 @@ const Landing = () => {
             <Hero />
             <About />
             <Services />
+            <Clients />
             <Contact />
             <Footer />
         </div>

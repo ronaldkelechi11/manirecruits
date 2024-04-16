@@ -21,7 +21,7 @@ const Hero = () => {
                     className='text-2xl text-center text-white font-kanit' />
 
 
-                <div className="bg-primary py-3 px-10 text-nowrap text-white rounded-lg font-kanit border-2 border-white">Learn More</div>
+                <a href='#about' className="bg-primary py-3 px-10 text-nowrap text-white rounded-lg font-kanit border-2 border-white">Learn More</a>
 
             </div>
         </div >
