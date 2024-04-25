@@ -6,6 +6,17 @@
     scroll-behavior: smooth;
 }
 
+/* Carousel Animation */
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}
+
 /* Using External Font-Faces */
 @font-face {
     font-family: 'Kanit';

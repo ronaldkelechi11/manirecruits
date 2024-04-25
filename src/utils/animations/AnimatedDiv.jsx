@@ -3,16 +3,16 @@ import { motion, useScroll } from "framer-motion"
 import { useRef } from "react"
 
 const AnimatedDiv = ({ children, ...props }) => {
-    const ref = useRef(null)
+    const ref = useRef()
     const { scrollYProgress } = useScroll({
         target: ref,
-        offset: ["start 1", "0.8 1"]
+        offset: ["start 1", "center 1"]
     })
 
 
     return (
         <motion.div
-            // transition={{ duration: 0.5, type: 'spring' }}
+            transition={{ duration: 0.5, type: 'spring' }}
             ref={ref}
             style={{
                 opacity: scrollYProgress,

@@ -3,6 +3,7 @@ import BackButton from "../../utils/components/BackButton"
 import { useState } from "react"
 import PasswordInput from "../../utils/components/PasswordInput"
 import NormalInput from "../../utils/components/NormalInput"
+import InfoBox from "../../utils/components/InfoBox"
 
 const Signupmain = () => {
     // Input Values
@@ -31,6 +32,9 @@ const Signupmain = () => {
     return (
         <div className="w-screen h-screen bg-white flex flex-col justify-center items-center">
             <BackButton />
+
+
+            <InfoBox isVisible={true} status={true} infoText={'Succesful Login'} />
 
             <div className="flex flex-col w-full">
                 <p className="text-6xl font-kanit text-center text-primary">Hello,</p>

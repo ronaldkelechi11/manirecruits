@@ -13,7 +13,7 @@ const Hero = () => {
                 <TypeAnimation
                     sequence={[
                         "Let us help you take the next step", 1000,
-                        "Explore Diverse Opportunities", 1000,
+                        "Locate multiple Chances", 1000,
                         "Start Your Journey Today", 1000
                     ]}
                     speed={50}
