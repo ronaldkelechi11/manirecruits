@@ -9,11 +9,11 @@ const Services = () => {
 
                 <div className="rounded-lg w-full min-h-[30vh] md:min-h-[50vh] bg-gray-200 md:hover:scale-105 transition p-5 md:p-10 flex flex-col justify-between">
                     <div className="flex flex-col">
-                        <p className="text-xl md:text-2xl text-gray-900 font-poppins">Staff</p>
-                        <p className="text-xl md:text-2xl text-gray-500 font-poppins font-extrabold group-hover:bg-gray-900">Recruitment</p>
+                        <p className="text-xl md:text-2xl text-gray-900 font-poppins">HR Outsourcing </p>
+                        <p className="text-xl md:text-2xl text-gray-500 font-poppins font-extrabold group-hover:bg-gray-900">Services</p>
                     </div>
 
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, sint?</p>
+                    <p className="font-poppins">When you need to entrust the processes of your business functions to external vendors</p>
                 </div>
 
 
