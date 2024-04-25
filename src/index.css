@@ -17,6 +17,10 @@
     }
 }
 
+.animate-scroll {
+    animation: scroll 1.5s infinite linear;
+}
+
 /* Using External Font-Faces */
 @font-face {
     font-family: 'Kanit';

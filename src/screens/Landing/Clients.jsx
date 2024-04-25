@@ -1,23 +1,25 @@
+import AnimatedDiv from "../../utils/animations/AnimatedDiv"
 
 const Clients = () => {
+
     return (
-        <div className='h-24 bg-white p-3'>
-            <div className="gap-3 items-center">
-                <div className="h-10 min-w-20 bg-black"></div>
-                <div className="h-10 min-w-20 bg-black"></div>
-                <div className="h-10 min-w-20 bg-black"></div>
-                <div className="h-10 min-w-20 bg-black"></div>
-                <div className="h-10 min-w-20 bg-black"></div>
-                <div className="h-10 min-w-20 bg-black"></div>
-                <div className="h-10 min-w-20 bg-black"></div>
-                <div className="h-10 min-w-20 bg-red-500"></div>
-                <div className="h-10 min-w-20 bg-black"></div>
-                <div className="h-10 min-w-20 bg-black"></div>
-                <div className="h-10 min-w-20 bg-green-500"></div>
-                <div className="h-10 min-w-20 bg-black"></div>
-                <div className="h-10 min-w-20 bg-black"></div>
+        <AnimatedDiv className='bg-white p-3 box-border overflow-hidden'>
+            <div className="flex flex-row items-center animate-scroll">
+                <div className="h-10 min-w-20 mx-5 bg-black"></div>
+                <div className="h-10 min-w-20 mx-5 bg-black"></div>
+                <div className="h-10 min-w-20 mx-5 bg-black"></div>
+                <div className="h-10 min-w-20 mx-5 bg-black"></div>
+                <div className="h-10 min-w-20 mx-5 bg-black"></div>
+                <div className="h-10 min-w-20 mx-5 bg-black"></div>
+                <div className="h-10 min-w-20 mx-5 bg-black"></div>
+                <div className="h-10 min-w-20 mx-5 bg-red-500"></div>
+                <div className="h-10 min-w-20 mx-5 bg-black"></div>
+                <div className="h-10 min-w-20 mx-5 bg-black"></div>
+                <div className="h-10 min-w-20 mx-5 bg-green-500"></div>
+                <div className="h-10 min-w-20 mx-5 bg-black"></div>
+                <div className="h-10 min-w-20 mx-5 bg-black"></div>
             </div>
-        </div>
+        </AnimatedDiv>
     )
 }
 
