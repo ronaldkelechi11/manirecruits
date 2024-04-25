@@ -1,8 +1,9 @@
+import AnimatedDiv from "../../utils/animations/AnimatedDiv"
 
 
 const About = () => {
     return (
-        <div id='about' className="w-screen flex flex-col gap-10 justify-evenly p-5">
+        <AnimatedDiv id='about' className="w-screen flex flex-col gap-10 justify-evenly p-5">
 
             <div className="w-full flex flex-col items-center justify-center gap-5">
                 <div className="w-3 h-20 bg-primary"></div>
@@ -46,7 +47,7 @@ const About = () => {
                 </div>
             </div>
 
-        </div>
+        </AnimatedDiv>
     )
 }
 

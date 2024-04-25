@@ -1,8 +1,9 @@
+import AnimatedDiv from "../../utils/animations/AnimatedDiv"
 
 
 const Services = () => {
     return (
-        <div id="services" className="w-screen flex flex-col gap-3 p-5 mt-5">
+        <AnimatedDiv id="services" className="w-screen flex flex-col gap-3 p-5 mt-5">
             <h1 className="text-5xl md:text-5xl text-center text-primary font-kanit font-extrabold uppercase">Our creative Services</h1>
 
             <div className="h-full w-full grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-8 justify-items-center items-center">
@@ -69,7 +70,7 @@ const Services = () => {
             <div className="border border-gray-200 border-x-0 border-b-0 text-center mt-5">
                 <p className="font-kanit text-sm">And many more Executive and Domestic services that we offer all at <br /> Mani Recruits and Training.</p>
             </div>
-        </div>
+        </AnimatedDiv>
     )
 }
 
