@@ -18,8 +18,14 @@
 }
 
 .animate-scroll {
-    animation: scroll 1.5s infinite linear;
+    animation: 10s scroll infinite linear;
 }
+
+.animate-scroll:hover {
+    animation-play-state: paused;
+}
+
+
 
 /* Using External Font-Faces */
 @font-face {

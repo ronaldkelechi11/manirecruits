@@ -1,11 +1,12 @@
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import BackButton from "../../utils/components/BackButton"
 import { useState } from "react"
 import PasswordInput from "../../utils/components/PasswordInput"
 import NormalInput from "../../utils/components/NormalInput"
-import InfoBox from "../../utils/components/InfoBox"
 
 const Signupmain = () => {
+    const navigate = useNavigate()
+
     // Input Values
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -20,21 +21,20 @@ const Signupmain = () => {
         e.preventDefault();
         console.log(password, confirmPassword);
 
-
         if (password.length <= 8) {
             setPasswordError(true)
         }
         if (confirmPassword != password) {
             setConfirmPasswordError(true)
         }
+
+        navigate('2')
     }
 
     return (
         <div className="w-screen h-screen bg-white flex flex-col justify-center items-center">
             <BackButton />
 
-
-            <InfoBox isVisible={true} status={true} infoText={'Succesful Login'} />
 
             <div className="flex flex-col w-full">
                 <p className="text-6xl font-kanit text-center text-primary">Hello,</p>
@@ -88,9 +88,6 @@ const Signupmain = () => {
                         Have an Account? <a href="#" className="text-info">Sign In</a>
                     </Link>
                 </form>
-
-
-
             </div>
 
         </div>
