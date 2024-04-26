@@ -3,6 +3,7 @@ import BackButton from "../../utils/components/BackButton"
 import { useState } from "react"
 import PasswordInput from "../../utils/components/PasswordInput"
 import NormalInput from "../../utils/components/NormalInput"
+import axios from "axios"
 
 const Signupmain = () => {
     const navigate = useNavigate()
@@ -27,8 +28,15 @@ const Signupmain = () => {
         if (confirmPassword != password) {
             setConfirmPasswordError(true)
         }
+        else {
+            axios.post(import.meta.env.VITE_API_URL, { email: email, password: password })
+                .then((result) => {
+                    navigate('2')
+                }).catch((err) => {
 
-        navigate('2')
+                });
+        }
+
     }
 
     return (
