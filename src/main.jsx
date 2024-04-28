@@ -7,6 +7,8 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Landing from './screens/Landing/Landing'
 import Signupmain from './screens/Signup/Signupmain'
 import SignUpTwo from './screens/Signup/SignUpTwo'
+import SignUpThree from './screens/Signup/SignUpThree'
+import VerifyEmail from './screens/Signup/VerifyEmail'
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -22,6 +24,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <Route path='/signup'>
         <Route index element={<Signupmain />} />
         <Route path='2' element={<SignUpTwo />} />
+        <Route path='3' element={<SignUpThree />} />
+        <Route path='verifyemail' element={<VerifyEmail />} />
       </Route>
 
 

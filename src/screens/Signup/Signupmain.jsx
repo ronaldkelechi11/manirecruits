@@ -1,9 +1,10 @@
-import { Link, useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import BackButton from "../../utils/components/BackButton"
 import { useState } from "react"
 import PasswordInput from "../../utils/components/PasswordInput"
 import NormalInput from "../../utils/components/NormalInput"
 import axios from "axios"
+import CustomButton from "../../utils/components/CustomButton"
 
 const Signupmain = () => {
     const navigate = useNavigate()
@@ -14,26 +15,51 @@ const Signupmain = () => {
     const [confirmPassword, setConfirmPassword] = useState('')
 
     // Error checking
+    const [emailError, setEmailError] = useState(false)
     const [passwordError, setPasswordError] = useState(false)
     const [confirmPasswordError, setConfirmPasswordError] = useState(false)
+    const [serverError, setServerError] = useState(false)
+
+    // Error Indicating
+    const [message, setMessage] = useState('')
 
 
     function formSubmit(e) {
         e.preventDefault();
-        console.log(password, confirmPassword);
 
+        if (!email) {
+            setEmailError(true)
+
+            setTimeout(() => {
+                setEmailError(false)
+            }, 2000);
+            return false
+        }
         if (password.length <= 8) {
             setPasswordError(true)
+
+            setTimeout(() => {
+                setPasswordError(false)
+            }, 2000);
+            return false
         }
         if (confirmPassword != password) {
             setConfirmPasswordError(true)
+
+            setTimeout(() => {
+                setConfirmPasswordError(false)
+            }, 2000);
+            return false
         }
         else {
-            axios.post(import.meta.env.VITE_API_URL, { email: email, password: password })
+            axios.post(`${import.meta.env.VITE_API_URL}/signup`, { email: email, password: password })
                 .then((result) => {
+                    localStorage.setItem("USER_EMAIL", email)
+                    console.log(result);
                     navigate('2')
                 }).catch((err) => {
-
+                    setMessage(err.message)
+                    setServerError(true)
                 });
         }
 
@@ -56,6 +82,11 @@ const Signupmain = () => {
                         value={email}
                         onChange={(e) => { setEmail(e.target.value) }}
                     />
+                    <div className="text-center font-kanit text-danger">
+                        {emailError &&
+                            <p>Email cannot be blank</p>
+                        }
+                    </div>
 
 
 
@@ -67,7 +98,7 @@ const Signupmain = () => {
                         onFocus={() => { setPasswordError(false) }}
                         onChange={(e) => { setPassword(e.target.value) }} />
 
-                    <div className="text-center font-kanit text-info">
+                    <div className="text-center font-kanit text-info transition-all animate-[0.2s]">
                         {passwordError &&
                             <p>Password should be greater than 8 digits</p>
                         }
@@ -90,11 +121,20 @@ const Signupmain = () => {
                     </div>
 
                     {/* Submit Button */}
-                    <button type="submit" className="bg-primary text-white rounded-lg h-16 font-kanit uppercase">Sign Up</button>
+                    <CustomButton text={"Sign Up"} />
 
-                    <Link to={'#'} className="text-black text-center font-poppins">
-                        Have an Account? <a href="#" className="text-info">Sign In</a>
-                    </Link>
+                    <p className="text-black text-center font-poppins">
+                        Have an Account? <a href="/login" className="text-info">Sign In</a>
+                    </p>
+
+
+                    {/* Error Display Component */}
+                    <div className="text-center font-kanit text-danger fixed bottom-10 left-0 right-0  p-3">
+
+                        {serverError &&
+                            <p className="border border-danger rounded-xl p-3">{message}</p>
+                        }
+                    </div>
                 </form>
             </div>
 

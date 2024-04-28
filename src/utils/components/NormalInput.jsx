@@ -9,6 +9,8 @@ const NormalInput = ({ type, placeholder, value, error, onChange, props }) => {
             placeholder={placeholder}
             className={normalInput}
             value={value}
+            required
+            maxLength={64}
             onChange={onChange} />
     )
 }
