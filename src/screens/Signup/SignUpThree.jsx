@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom'
 import ScrollToLeft from '../../utils/animations/ScrollToLeft'
 import axios from 'axios'
 import CustomButton from '../../utils/components/CustomButton'
-import ErrorCard from '../../utils/components/ErrorCard'
 
 const SignUpThree = () => {
     const navigate = useNavigate()
@@ -22,32 +21,30 @@ const SignUpThree = () => {
     const [message, setMessage] = useState('')
 
     function submitForm(e) {
-        e.preventDefault()
+        e.preventDefault();
 
-        try {
-            axios.post(`${import.meta.env.VITE_API_URL}/signup/${USER_EMAIL}/3`,
-                {
-                    phone_number: telephone,
-                    street: street,
-                    city: city,
-                    state: userState,
-                    zipCode: zipcode
-                }
-            ).then((result) => {
-                localStorage.setItem("USER_VERIFIED", false)
+        if (telephone.startsWith("0")) {
+            console.log("Starts with 0");
+            setTelephone(telephone.replace(telephone.charAt(0), "+234"))
+            return true;
+        }
+
+        axios.post(`${import.meta.env.VITE_API_URL}/signup/${USER_EMAIL}/3`,
+            {
+                phone_number: telephone,
+                street: street,
+                city: city,
+                state: userState,
+                zipCode: zipcode
+            })
+            .then((result) => {
                 navigate('/signup/verifyemail')
-                console.log(result);
+                localStorage.setItem("USER_VERIFIED", false)
             }).catch((err) => {
-                setMessage(err)
+                setMessage(err.message)
                 setServerError(true)
                 console.log(err);
             });
-
-        } catch (error) {
-            setMessage(error)
-            setServerError(true)
-            console.log(error);
-        }
 
     }
 
@@ -74,7 +71,7 @@ const SignUpThree = () => {
                     <input type="text" required placeholder='State' className='h-16 border-grey border p-5 rounded-lg font-poppins capitalize'
                         value={userState} onChange={(e) => { setUserState(e.target.value) }} />
 
-                    <input type="text" placeholder='Zipcode' maxLength={6} minLength={5} title='Zip Code'
+                    <input type="number" placeholder='Zipcode' maxLength={6} minLength={5} title='Zip Code'
                         required className='h-16 border-grey border p-5 rounded-lg font-poppins'
                         value={zipcode} onChange={(e) => { setZipCode(e.target.value) }} />
 
@@ -83,7 +80,11 @@ const SignUpThree = () => {
 
 
                     {/* Error Display Component */}
-                    <ErrorCard text={message} error={serverError} />
+                    <div className="text-center font-kanit text-danger fixed bottom-10 left-0 right-0  p-3">
+                        {serverError &&
+                            <p className="border border-danger rounded-xl p-3">{message}</p>
+                        }
+                    </div>
 
                 </form>
             </div>

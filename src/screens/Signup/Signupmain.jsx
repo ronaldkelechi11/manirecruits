@@ -130,11 +130,12 @@ const Signupmain = () => {
 
                     {/* Error Display Component */}
                     <div className="text-center font-kanit text-danger fixed bottom-10 left-0 right-0  p-3">
-
                         {serverError &&
                             <p className="border border-danger rounded-xl p-3">{message}</p>
                         }
                     </div>
+
+
                 </form>
             </div>
 
