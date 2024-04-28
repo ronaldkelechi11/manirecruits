@@ -10,6 +10,7 @@ import SignUpTwo from './screens/Signup/SignUpTwo'
 import SignUpThree from './screens/Signup/SignUpThree'
 import VerifyEmail from './screens/Signup/VerifyEmail'
 import LoginMain from './screens/Login/LoginMain'
+import Index from './screens/Home/Index'
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -31,6 +32,10 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 
       <Route path='/login'>
         <Route index element={<LoginMain />} />
+      </Route>
+
+      <Route path='/home'>
+        <Route index element={<Index />} />
       </Route>
 
 
