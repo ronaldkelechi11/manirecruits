@@ -1,6 +1,7 @@
 import { MenuHamburger, MenuHotdog } from "@iconsans/react/linear"
 import { useState } from "react"
 import { Link, NavLink } from "react-router-dom"
+import Logo from '../../assets/images/logo_white_nobg.png'
 
 
 const Navbar = () => {
@@ -16,7 +17,10 @@ const Navbar = () => {
             <NavLink
                 reloadDocument
                 className="text-white text-3xl md:text-5xl font-kanit">
-                <p>Logo</p>
+                <div className="flex flex-row gap-2 items-center">
+                    <img src={Logo} alt="Mani Recruits and Training Logo" className="md:h-16 md:w-16 h-14 w-14" />
+                    <p className="hidden text-lg md:flex font-kanit">Mani Recruits and Training</p>
+                </div>
             </NavLink>
 
             <div className="hidden md:flex flex-row gap-5 text-primary">

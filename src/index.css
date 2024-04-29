@@ -21,9 +21,6 @@
     animation: 10s scroll infinite linear;
 }
 
-.animate-scroll:hover {
-    animation-play-state: paused;
-}
 
 
 
