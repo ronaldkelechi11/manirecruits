@@ -41,7 +41,7 @@ const LoginMain = () => {
             axios.post(`${import.meta.env.VITE_API_URL}/login`, { email: email, password: password })
                 .then((result) => {
                     localStorage.setItem("USER_EMAIL", email)
-                    console.log(result.status);
+
                     // Admin Login
                     if (result?.status == 202) {
                         alert("Admin Logged In")
@@ -50,7 +50,17 @@ const LoginMain = () => {
                         console.log("Hello");
                         // navigate('/home')
                     }
+                    else if (result?.status == 204) {
+                        setServerError(true)
+                        setMessage("Incorrect Password")
+
+                        setTimeout(() => {
+                            setServerError(false)
+                        }, 2000);
+                        return false;
+                    }
                 }).catch((err) => {
+                    console.log(err.data);
                     setMessage(err.message)
                     setServerError(true)
                 });
