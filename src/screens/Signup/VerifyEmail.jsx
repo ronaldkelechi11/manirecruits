@@ -3,9 +3,11 @@ import VerifyIcon from "../../assets/svgs/verify.svg"
 import CustomButton from "../../utils/components/CustomButton"
 import { motion } from "framer-motion"
 import { Link, useNavigate } from "react-router-dom"
+import PinInput from "react-pin-input"
 
 const VerifyEmail = () => {
     const navigate = useNavigate()
+    document.title = "Verify Email - Mani Recruits and Training"
     const USER_EMAIL = localStorage.getItem("USER_EMAIL")
     const USER_VERIFIED = localStorage.getItem("USER_VERIFIED")
 
@@ -42,6 +44,7 @@ const VerifyEmail = () => {
                 </p>
 
                 {/* PIN INPUT */}
+                <PinInput length={4} placeholder="0" style={{ textAlign: 'center' }} type="number" />
 
                 <CustomButton text={'Verify'} onClicked={VerifyEmail} />
             </div>

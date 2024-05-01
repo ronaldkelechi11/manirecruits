@@ -11,6 +11,7 @@ import SignUpThree from './screens/Signup/SignUpThree'
 import VerifyEmail from './screens/Signup/VerifyEmail'
 import LoginMain from './screens/Login/LoginMain'
 import Home from './screens/Home/Home'
+import AdminMain from './screens/Admin/AdminMain'
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -36,6 +37,10 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 
       <Route path='/home'>
         <Route index element={<Home />} />
+      </Route>
+
+      <Route path='/admin'>
+        <Route index element={<AdminMain />} />
       </Route>
 
 

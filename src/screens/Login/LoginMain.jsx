@@ -11,6 +11,7 @@ import ScrollToLeft from "../../utils/animations/ScrollToLeft";
 
 const LoginMain = () => {
     const navigate = useNavigate()
+    document.title = "Login - Mani Recruits and Training"
 
     // Input Values
     const [email, setEmail] = useState('')
@@ -45,9 +46,10 @@ const LoginMain = () => {
                     // Admin Login
                     if (result?.status == 202) {
                         alert("Admin Logged In")
+                        localStorage.setItem('ADMIN_IS_LOGGED_IN', true)
+                        navigate('/admin')
                     }
                     else if (result?.status == 200) {
-                        console.log("Hello");
                         navigate('/home')
                     }
                     else if (result?.status == 204) {

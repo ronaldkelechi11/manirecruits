@@ -9,6 +9,8 @@ import ScrollToLeft from "../../utils/animations/ScrollToLeft";
 
 const Signupmain = () => {
     const navigate = useNavigate()
+    document.title = "Login - Mani Recruits and Training"
+
 
     // Input Values
     const [email, setEmail] = useState('')
