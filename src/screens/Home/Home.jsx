@@ -1,5 +1,5 @@
 
-const Index = () => {
+const Home = () => {
     return (
         <div className="w-screen h-screen bg-primary">
 
@@ -7,4 +7,4 @@ const Index = () => {
     )
 }
 
-export default Index
+export default Home
