@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import BackButton from "../../utils/components/BackButton"
 import { useState } from "react"
 import PasswordInput from "../../utils/components/PasswordInput"
@@ -48,7 +48,7 @@ const LoginMain = () => {
                     }
                     else if (result?.status == 200) {
                         console.log("Hello");
-                        // navigate('/home')
+                        navigate('/home')
                     }
                     else if (result?.status == 204) {
                         setServerError(true)
@@ -112,7 +112,7 @@ const LoginMain = () => {
                     <CustomButton text={"Login"} />
 
                     <p className="text-black text-center font-poppins">
-                        Don&apos;t have an Account? <a href="/signup" className="text-info">Sign Up</a>
+                        Don&apos;t have an Account? <Link to="/signup" className="text-info">Sign Up</Link>
                     </p>
 
 

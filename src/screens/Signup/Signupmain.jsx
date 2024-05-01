@@ -1,10 +1,11 @@
-import { useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import BackButton from "../../utils/components/BackButton"
 import { useState } from "react"
 import PasswordInput from "../../utils/components/PasswordInput"
 import NormalInput from "../../utils/components/NormalInput"
 import axios from "axios"
 import CustomButton from "../../utils/components/CustomButton"
+import ScrollToLeft from "../../utils/animations/ScrollToLeft";
 
 const Signupmain = () => {
     const navigate = useNavigate()
@@ -66,7 +67,7 @@ const Signupmain = () => {
     }
 
     return (
-        <div className="w-screen h-screen bg-white flex flex-col justify-center items-center">
+        <ScrollToLeft className="w-screen h-screen bg-white flex flex-col justify-center items-center">
             <BackButton />
 
 
@@ -124,7 +125,7 @@ const Signupmain = () => {
                     <CustomButton text={"Sign Up"} />
 
                     <p className="text-black text-center font-poppins">
-                        Have an Account? <a href="/login" className="text-info">Sign In</a>
+                        Have an Account? <Link to="/login" className="text-info">Sign In</Link>
                     </p>
 
 
@@ -139,7 +140,7 @@ const Signupmain = () => {
                 </form>
             </div>
 
-        </div>
+        </ScrollToLeft>
     )
 }
 

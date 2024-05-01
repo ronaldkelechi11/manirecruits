@@ -19,7 +19,6 @@ const Navbar = () => {
                 className="text-white text-3xl md:text-5xl font-kanit">
                 <div className="flex flex-row gap-2 items-center">
                     <img src={Logo} alt="Mani Recruits and Training Logo" className="md:h-16 md:w-16 h-14 w-14" />
-                    <p className="hidden text-lg md:flex font-kanit">Mani Recruits and Training</p>
                 </div>
             </NavLink>
 
