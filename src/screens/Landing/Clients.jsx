@@ -17,7 +17,7 @@ const Clients = () => {
         <AnimatedDiv className='bg-white flex flex-col gap-5 p-3 box-border overflow-hidden'>
             <p className="text-5xl md:text-5xl text-center text-primary font-kanit font-extrabold uppercase">Some of our Clients</p>
 
-            <Marquee speed={50} pauseOnHover='true'>
+            <Marquee speed={50} autoFill='true' pauseOnHover='true' className="bg-white">
                 <img src={dreamCityLogo} className="h-16 min-w-32 mx-5" />
                 <img src={delmarLogo} className="h-16 min-w-32 mx-5" />
                 <img src={nabroLogo} className="h-16 min-w-32 mx-5" />

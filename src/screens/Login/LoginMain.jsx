@@ -50,6 +50,7 @@ const LoginMain = () => {
                         navigate('/admin')
                     }
                     else if (result?.status == 200) {
+                        localStorage.setItem("USER_EMAIL", email)
                         navigate('/home')
                     }
                     else if (result?.status == 204) {

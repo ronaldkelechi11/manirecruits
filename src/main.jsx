@@ -31,14 +31,19 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path='verifyemail' element={<VerifyEmail />} />
       </Route>
 
+      {/* Login Route */}
       <Route path='/login'>
         <Route index element={<LoginMain />} />
       </Route>
 
+      {/* Home Route */}
       <Route path='/home'>
         <Route index element={<Home />} />
+        <Route path=":number" element={<Home />} />
       </Route>
 
+
+      {/* Admin Route */}
       <Route path='/admin'>
         <Route index element={<AdminMain />} />
       </Route>
