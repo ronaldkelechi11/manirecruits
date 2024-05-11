@@ -7,7 +7,9 @@
 }
 
 /* Custom CSS */
-
+#bnb a.active {
+    @apply text-info font-extrabold text-4xl transition-all border-b-2 border-info;
+}
 
 /* Using External Font-Faces */
 @font-face {

@@ -14,6 +14,7 @@ import Home from './screens/Home/Home'
 import AdminMain from './screens/Admin/AdminMain'
 import Settings from './screens/Settings/Settings'
 import Messages from './screens/Messages/Messages'
+import Notifications from './screens/Notifications/Notifications'
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -51,6 +52,10 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 
       <Route path='/messages'>
         <Route index element={<Messages />} />
+      </Route>
+
+      <Route path='/notifications'>
+        <Route index element={<Notifications />} />
       </Route>
 
 
