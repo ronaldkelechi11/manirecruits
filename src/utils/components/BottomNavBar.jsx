@@ -6,21 +6,21 @@ const BottomNavBar = () => {
 
 
     return (
-        <div id="bnb" className='w-screen h-20 bg-white border-t-2 border-grey fixed bottom-0 left-0 right-0 flex flex-row p-3 gap-3'>
+        <div id="bnb" className='w-screen h-20 bg-white border-t-2 border-grey fixed bottom-0 left-0 right-0 flex flex-row p-3 gap-3 z-50'>
 
-            <NavLink to={'/home'} className="h-full w-full text-3xl flex justify-center items-center">
+            <NavLink to={'/home'} className="h-full w-full text-3xl flex justify-center items-center text-slate-500">
                 <Home1 />
             </NavLink>
 
-            <NavLink to={'/notifications'} className="h-full w-full text-3xl flex justify-center items-center">
+            <NavLink to={'/notifications'} className="h-full w-full text-3xl flex justify-center items-center text-slate-500">
                 <Bell />
             </NavLink>
 
-            <NavLink to={'/messages'} className="h-full w-full text-3xl flex justify-center items-center">
+            <NavLink to={'/messages'} className="h-full w-full text-3xl flex justify-center items-center text-slate-500">
                 <Message />
             </NavLink>
 
-            <NavLink to={'/settings'} className="h-full w-full text-3xl flex justify-center items-center">
+            <NavLink to={'/settings'} className="h-full w-full text-3xl flex justify-center items-center text-slate-500">
                 <Setting />
             </NavLink>
 
