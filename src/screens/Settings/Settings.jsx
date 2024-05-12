@@ -8,12 +8,8 @@ const Settings = () => {
 
 
     return (
-        <div className='w-screen h-screen'>
-            <div className="w-screen h-16 fixed top-0 flex flex-row justify-between gap-5 items-center p-5">
-                <p className="ml-3 text-xl font-extrabold font-kanit">Settings</p>
-            </div>
-
-            <div className=""></div>
+        <div className='w-screen h-screen flex flex-col'>
+            <div className="h-48 w-full bg-info"></div>
 
 
             <BottomNavBar />
