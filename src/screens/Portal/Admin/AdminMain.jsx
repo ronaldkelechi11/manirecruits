@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import TopNavBar from '../../utils/components/TopNavbar'
-import { Messages, User1, User2, User3, User4, User4Cross, Users1, Users2 } from '@iconsans/react/linear'
+import TopNavBar from '../../../utils/components/TopNavbar'
+import { Messages, Pencil, User2, Users2 } from '@iconsans/react/linear'
+import AdminBottonNavBar from '../../../utils/components/AdminBottomNavBar'
 
 const AdminMain = () => {
     const navigate = useNavigate()
@@ -68,10 +69,18 @@ const AdminMain = () => {
             </div>
 
             {/* Current Vacancies ListView */}
-            <p className='p-3 text-3xl font-kanit'>Current Vacancies</p>
-            <div className=""></div>
+            {/* <p className='p-3 text-3xl font-kanit'>Current Vacancies</p>
+            <div className=""></div> */}
 
 
+
+            {/* FAB */}
+            <div className="w-16 h-16 rounded-full bg-primary text-white flex justify-center items-center text-3xl fixed bottom-24 right-5">
+                <Pencil onContextMenu={'Create post'} />
+            </div>
+
+
+            <AdminBottonNavBar />
         </div>
     )
 }

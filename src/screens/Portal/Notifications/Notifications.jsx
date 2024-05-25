@@ -1,4 +1,4 @@
-import BottomNavBar from "../../utils/components/BottomNavBar"
+import BottomNavBar from "../../../utils/components/BottomNavBar"
 
 const Notifications = () => {
     return (

@@ -10,11 +10,11 @@ import SignUpTwo from './screens/Signup/SignUpTwo'
 import SignUpThree from './screens/Signup/SignUpThree'
 import VerifyEmail from './screens/Signup/VerifyEmail'
 import LoginMain from './screens/Login/LoginMain'
-import Home from './screens/Home/Home'
-import AdminMain from './screens/Admin/AdminMain'
-import Settings from './screens/Settings/Settings'
-import Messages from './screens/Messages/Messages'
-import Notifications from './screens/Notifications/Notifications'
+import Home from './screens/Portal/Home/Home'
+import AdminMain from './screens/Portal/Admin/AdminMain'
+import Settings from './screens/Portal/Settings/Settings'
+import Messages from './screens/Portal/Messages/Messages'
+import Notifications from './screens/Portal/Notifications/Notifications'
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -57,7 +57,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <Route path='/notifications'>
         <Route index element={<Notifications />} />
       </Route>
-
 
       {/* Admin Route */}
       <Route path='/admin'>

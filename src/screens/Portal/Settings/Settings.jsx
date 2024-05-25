@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom'
-import BottomNavBar from '../../utils/components/BottomNavBar'
+import BottomNavBar from '../../../utils/components/BottomNavBar'
 import { useState } from 'react'
-import CustomLinkItem from '../../utils/components/CustomLinkItem'
+import CustomLinkItem from '../../../utils/components/CustomLinkItem'
 import { ArrowLeft } from '@iconsans/react/bold'
 import { Tick, TickCircle } from '@iconsans/react/linear'
 

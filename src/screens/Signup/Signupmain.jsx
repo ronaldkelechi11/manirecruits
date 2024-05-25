@@ -111,7 +111,7 @@ const Signupmain = () => {
 
                     {/* Confirm Password */}
                     <PasswordInput
-                        placeholder={'ConfirmPassword'}
+                        placeholder={'Confirm Password'}
                         value={confirmPassword}
                         error={confirmPasswordError}
                         onFocus={() => { setConfirmPasswordError(false) }}
