@@ -15,7 +15,7 @@ const Home = () => {
                 </div>
             </div>
 
-            <div className="bg-black h-full w-full"></div>
+            <div className="bg-white h-full w-full"></div>
 
 
             <BottomNavBar />

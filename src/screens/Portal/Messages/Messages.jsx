@@ -10,8 +10,8 @@ const Messages = () => {
             title: "Software Developer"
         },
         {
-            firstname: 'John',
-            lastname: 'Doe',
+            firstname: 'Johnny',
+            lastname: 'Rapid',
             title: "Software Developer"
         },
         {
@@ -46,10 +46,16 @@ const Messages = () => {
         },
     ]
     return (
-        <div className="w-screen h-screen bg-primary">
-            <div className="h-20 w-full text-white font-kanit text-3xl p-3 flex flex-col justify-center border-b-grey border-2 border-t-0 border-l-0 border-r-0 fixed top-0 bg-primary">Messages</div>
+        <div className="w-screen h-screen bg-white">
+            <div className="h-20 w-full text-black font-kanit text-3xl p-3 flex flex-col justify-center border-b-grey border-2 border-t-0 border-l-0 border-r-0 fixed top-0">Messages</div>
 
             <div className="flex flex-col w-full h-full pt-20">
+                {/* No messages */}
+                {
+
+                }
+
+                {/* User message list */}
                 {
                     users.map(user => {
                         return (<MessageComponent key={users.indexOf(user)} user_firstname={user.firstname} user_lastname={user.lastname} user_title={user.title} />)

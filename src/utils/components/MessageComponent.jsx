@@ -11,7 +11,7 @@ const MessageComponent = ({ user_firstname, user_lastname, user_title }) => {
             </div>
 
             <div className="w-full h-full flex flex-col p-3">
-                <p className='font-kanit text-xl text-white'>{user_firstname + " " + user_lastname}</p>
+                <p className='font-kanit text-xl text-black'>{user_firstname + " " + user_lastname}</p>
                 <p className='font-poppins text-md text-slate-500'>{user_title}</p>
             </div>
 
