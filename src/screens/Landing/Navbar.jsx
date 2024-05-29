@@ -56,7 +56,7 @@ function NavLinks() {
             {/* Landing Page Links */}
             <a className={navbarStyling} href="#about">About Us</a>
             <a className={navbarStyling} href="#services">Our Services</a>
-            <a className={navbarStyling} href="#contact">Contact</a>
+            <a className={navbarStyling} href="#contactus">Contact</a>
 
             {/* Login and Signup Buttons */}
             <Link to={'/signup'}

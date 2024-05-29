@@ -1,4 +1,3 @@
-import ScrollToLeft from '../../../utils/animations/ScrollToLeft'
 import BottomNavBar from '../../../utils/components/BottomNavBar'
 import MessageComponent from '../../../utils/components/MessageComponent'
 
@@ -10,7 +9,7 @@ const Messages = () => {
             title: "Software Developer"
         },
         {
-            firstname: 'Johnny',
+            firstname: 'Dave',
             lastname: 'Rapid',
             title: "Software Developer"
         },
