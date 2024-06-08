@@ -15,6 +15,7 @@ import AdminMain from './screens/Portal/Admin/AdminMain'
 import Settings from './screens/Portal/Settings/Settings'
 import Messages from './screens/Portal/Messages/Messages'
 import Notifications from './screens/Portal/Notifications/Notifications'
+import UpdateUserTitle from './screens/Portal/Settings/UpdateUserTitle'
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -48,6 +49,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       {/* Setting(Settings and User profile) */}
       <Route path='/settings'>
         <Route index element={<Settings />} />
+        <Route path='updateUserTitle' element={<UpdateUserTitle />} />
       </Route>
 
       <Route path='/messages'>

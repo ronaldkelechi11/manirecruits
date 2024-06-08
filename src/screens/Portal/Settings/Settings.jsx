@@ -14,7 +14,7 @@ const Settings = () => {
         firstname: 'John',
         lastname: 'Doe',
         email_address: 'johndoe@gmail.com',
-        title: 'Software Developer at Mani Recruits and Training',
+        title: 'Software Developer',
         profile_picture: '',
         date_of_birth: '',
         date_account_created: '',
@@ -81,6 +81,8 @@ const Settings = () => {
 
 
                 <p className='text-2xl font-kanit text-primary'>Profile Settings</p>
+
+                <CustomLinkItem text={'User Title'} description={'Change User Current Title'} href={'updateUserTitle'} />
 
                 <CustomLinkItem text={'Contact Details'} description={'Update user Contact Details'} />
 
