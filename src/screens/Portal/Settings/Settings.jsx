@@ -19,7 +19,7 @@ const Settings = () => {
         date_of_birth: '',
         date_account_created: '',
         role: "User",
-        isVerified: true,
+        isVerified: false,
         followers: 149,
         following: 200,
         posts: [],
@@ -55,7 +55,7 @@ const Settings = () => {
                     <p className='ml-3 text-3xl'>
                         <TickCircle className={user.isVerified ?
                             "text-blue-400" :
-                            "text-slate-200"} />
+                            "text-red-500"} />
                     </p>
                 </p>
                 <p className='text-lg text-center mt-5 text-white'>
@@ -84,11 +84,12 @@ const Settings = () => {
 
                 <CustomLinkItem text={'User Title'} description={'Change User Current Title'} href={'updateUserTitle'} />
 
-                <CustomLinkItem text={'Contact Details'} description={'Update user Contact Details'} />
+                <CustomLinkItem text={'Contact Details'} description={'Update user Contact Details'}
+                    href={'updatecontactdetails'} />
 
                 <CustomLinkItem text={'Role'} description={'Set the User role type'} href={'setrole'} />
 
-                <CustomLinkItem text={'Skills'} description={'Set User Skills'} href={'setskills'} />
+                <CustomLinkItem text={'Skills'} description={'Add User Skills'} href={'setskills'} />
 
                 <CustomLinkItem text={'Job Location'} description={"User's Preffered Job Locations"} href={'setskills'} />
 

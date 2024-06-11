@@ -16,6 +16,7 @@ import Settings from './screens/Portal/Settings/Settings'
 import Messages from './screens/Portal/Messages/Messages'
 import Notifications from './screens/Portal/Notifications/Notifications'
 import UpdateUserTitle from './screens/Portal/Settings/UpdateUserTitle'
+import UpdateContactDetails from './screens/Portal/Settings/UpdateContactDetails'
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -50,6 +51,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <Route path='/settings'>
         <Route index element={<Settings />} />
         <Route path='updateUserTitle' element={<UpdateUserTitle />} />
+        <Route path='updatecontactdetails' element={<UpdateContactDetails />} />
       </Route>
 
       <Route path='/messages'>

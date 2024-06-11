@@ -3,17 +3,22 @@ import AnimatedDiv from "../../../utils/animations/AnimatedDiv"
 import NormalInput from "../../../utils/components/NormalInput"
 import TopNavBar from "../../../utils/components/TopNavbar"
 import { useState } from "react"
+import axios from "axios"
 
 
 const UpdateUserTitle = () => {
     const navigate = useNavigate()
+    const USER_EMAIL = localStorage.getItem("USER_EMAIL")
 
-    const [title, setTitle] = useState()
+
+    const [title, setTitle] = useState("")
 
 
     function updateTitle(e) {
         e.preventDefault();
-        alert("Hi")
+        console.log(`${import.meta.env.VITE_API_URL}/dashboard/edit/${title}/${USER_EMAIL}`);
+
+        // axios.post(`${import.meta.env.VITE_BACKEND_URL} /dashboard/edit/${title}/${USER_EMAIL}`)
     }
 
     return (
