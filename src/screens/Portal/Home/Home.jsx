@@ -21,7 +21,10 @@ const Home = () => {
                     "Proficiency in bla bla bla",
                     "Proficiency in bla bla bla",
                     "Good commuinication and Collaboration skills",
-                ]
+                ],
+                likes: 2,
+                views: 4,
+                applications: 1
             },
             {
                 title: "lorem ipsum",
@@ -34,7 +37,10 @@ const Home = () => {
                     "Proficiency in bla bla bla",
                     "Proficiency in bla bla bla",
                     "Good commuinication and Collaboration skills",
-                ]
+                ],
+                likes: 3,
+                views: 10,
+                applications: 4
 
             }, {
                 title: "lorem ipsum",
@@ -46,7 +52,10 @@ const Home = () => {
                     "Proficiency in bla bla bla",
                     "Proficiency in bla bla bla",
                     "Good commuinication and Collaboration skills",
-                ]
+                ],
+                likes: 3,
+                views: 10,
+                applications: 4
 
             }, {
                 title: "lorem ipsum",
@@ -58,7 +67,10 @@ const Home = () => {
                     "Proficiency in bla bla bla",
                     "Proficiency in bla bla bla",
                     "Good commuinication and Collaboration skills",
-                ]
+                ],
+                likes: 3,
+                views: 10,
+                applications: 4
 
             }, {
                 title: "lorem ipsum",
@@ -71,7 +83,10 @@ const Home = () => {
                     "Proficiency in bla bla bla",
                     "Proficiency in bla bla bla",
                     "Good commuinication and Collaboration skills",
-                ]
+                ],
+                likes: 3,
+                views: 10,
+                applications: 4
             }, {
                 title: "lorem ipsum",
                 summary: " Lorem, ipsum dolor sit amet consectetur adipisicing elit. Qui itaque dolores nobis id vel in nemo, explicabo ratione rem fugit quos maxime, voluptatibus unde non porro, voluptatum dolor iste! Numquam, nesciunt rem voluptatem quas dolorem ipsa rerum maxime possimus sint beatae necessitatibus modi illum, est sit laudantium, vel sunt natus qui porro a iure reprehenderit deleniti hic ex. Sint optio reprehenderit nihil atque laudantium nesciunt, veniam amet, ducimus aspernatur vero quia exercitationem consectetur repellat asperiores harum repellendus iusto beatae corporis! Laborum distinctio, accusantium, aspernatur quos explicabo, atque nam tempore repellat necessitatibus corporis ipsum omnis. Delectus ea in rem qui dolorem!",
@@ -82,7 +97,10 @@ const Home = () => {
                     "Proficiency in bla bla bla",
                     "Proficiency in bla bla bla",
                     "Good commuinication and Collaboration skills",
-                ]
+                ],
+                likes: 3,
+                views: 10,
+                applications: 4
 
             }, {
                 title: "lorem ipsum",
@@ -94,7 +112,10 @@ const Home = () => {
                     "Proficiency in bla bla bla",
                     "Proficiency in bla bla bla",
                     "Good commuinication and Collaboration skills",
-                ]
+                ],
+                likes: 3,
+                views: 10,
+                applications: 4
 
             }, {
                 title: "lorem ipsum",
@@ -106,7 +127,10 @@ const Home = () => {
                     "Proficiency in bla bla bla",
                     "Proficiency in bla bla bla",
                     "Good commuinication and Collaboration skills",
-                ]
+                ],
+                likes: 3,
+                views: 10,
+                applications: 4
 
             }, {
                 title: "lorem ipsum",
@@ -119,7 +143,10 @@ const Home = () => {
                     "Proficiency in bla bla bla",
                     "Proficiency in bla bla bla",
                     "Good commuinication and Collaboration skills",
-                ]
+                ],
+                likes: 3,
+                views: 10,
+                applications: 4
             },
         ]
     )

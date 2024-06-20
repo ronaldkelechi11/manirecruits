@@ -17,6 +17,7 @@ import Messages from './screens/Portal/Messages/Messages'
 import Notifications from './screens/Portal/Notifications/Notifications'
 import UpdateUserTitle from './screens/Portal/Settings/UpdateUserTitle'
 import UpdateContactDetails from './screens/Portal/Settings/UpdateContactDetails'
+import PostScreen from './screens/Portal/Home/PostScreen'
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -43,8 +44,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 
       {/* Home Route */}
       <Route path='/home'>
-        <Route index element={<Home />} />
-        <Route path=":number" element={<Home />} />
+        <Route index element={<Home />} /> 
+
+        <Route path=":number" element={<PostScreen />} />
       </Route>
 
       {/* Setting(Settings and User profile) */}
