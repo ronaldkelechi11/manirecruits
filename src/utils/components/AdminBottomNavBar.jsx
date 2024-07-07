@@ -6,7 +6,7 @@ const AdminBottonNavBar = () => {
 
 
     return (
-        <div id="bnb" className='w-screen h-20 bg-white border-t-2 border-grey fixed bottom-0 left-0 right-0 flex flex-row p-3 gap-3 z-50'>
+        <div id="adminbnb" className='w-screen h-20 bg-white border-t-2 border-grey fixed bottom-0 left-0 right-0 flex flex-row p-3 gap-3 z-50'>
 
             <NavLink to={'/admin'} className="h-full w-full text-3xl flex justify-center items-center text-slate-500">
                 <Home1 />
