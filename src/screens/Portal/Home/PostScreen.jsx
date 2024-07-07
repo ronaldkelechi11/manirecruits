@@ -31,7 +31,7 @@ const PostScreen = () => {
         })
 
     return (
-        <AnimatedDiv className="w-screen h-screen bg-white flex mb-10">
+        <AnimatedDiv className="w-screen bg-white flex mb-10">
             <TopNavBar />
 
             <div className="mt-16 w-full h-full flex flex-col gap-3 p-3">
@@ -91,7 +91,7 @@ const PostScreen = () => {
                 }
 
 
-                <div to={'123'} className="w-full bg-primary text-white font-kanit flex justify-center items-center rounded-lg p-3 text-xl mb-10">
+                <div to={'123'} className="w-full bg-primary text-white font-kanit flex justify-center items-center rounded-lg p-3 text-xl">
                     Apply
                 </div>
 

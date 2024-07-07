@@ -26,10 +26,10 @@ const AdminMain = () => {
             <TopNavBar title={'Admin'} />
 
             {/* Main Functions of Admin will display here */}
-            <div className="grid grid-cols-1 md:grid-cols-3 mt-16 w-full gap-3 justify-items-center items-center p-3" >
+            {/* <div className="grid grid-cols-1 md:grid-cols-3 mt-16 w-full gap-3 justify-items-center items-center p-3" > */}
 
-                {/* Total Users Count */}
-                <div className="bg-info h-28 min-w-full md:h-48 md:p-5 md:w-[50%] flex flex-row p-2 rounded-lg">
+            {/* Total Users Count */}
+            {/* <div className="bg-info h-28 min-w-full md:h-48 md:p-5 md:w-[50%] flex flex-row p-2 rounded-lg">
                     <div className="w-[70%] h-full flex flex-col justify-between">
                         <div className="flex flex-row items-center">
                             <p className="font-kanit text-white text-2xl">Total Users</p>
@@ -39,10 +39,10 @@ const AdminMain = () => {
                     <div className="w-[30%] h-full flex justify-center items-center text-7xl text-slate-200">
                         <User2 />
                     </div>
-                </div>
+                </div> */}
 
-                {/* Total Clients Accounts*/}
-                <div className="bg-success h-28 min-w-full md:h-48 md:p-5 md:w-[50%] flex flex-row p-2 rounded-lg">
+            {/* Total Clients Accounts*/}
+            {/* <div className="bg-success h-28 min-w-full md:h-48 md:p-5 md:w-[50%] flex flex-row p-2 rounded-lg">
                     <div className="w-[70%] h-full flex flex-col justify-between">
                         <div className="flex flex-row items-center">
                             <p className="font-kanit text-white text-2xl">Total Clients</p>
@@ -52,10 +52,10 @@ const AdminMain = () => {
                     <div className="w-[30%] h-full flex justify-center items-center text-7xl text-slate-200">
                         <Users2 />
                     </div>
-                </div>
+                </div> */}
 
-                {/* Total posts */}
-                <div className="bg-primary h-28 min-w-full md:h-48 md:p-5 md:w-[50%] flex flex-row p-2 rounded-lg">
+            {/* Total posts */}
+            {/* <div className="bg-primary h-28 min-w-full md:h-48 md:p-5 md:w-[50%] flex flex-row p-2 rounded-lg">
                     <div className="w-[70%] h-full flex flex-col justify-between">
                         <div className="flex flex-row items-center">
                             <p className="font-kanit text-white text-2xl">Total Posts</p>
@@ -65,12 +65,8 @@ const AdminMain = () => {
                     <div className="w-[30%] h-full flex justify-center items-center text-7xl text-slate-200">
                         <Messages />
                     </div>
-                </div>
-            </div>
-
-            {/* Current Vacancies ListView */}
-            {/* <p className='p-3 text-3xl font-kanit'>Current Vacancies</p>
-            <div className=""></div> */}
+                </div> */}
+            {/* </div> */}
 
 
 
