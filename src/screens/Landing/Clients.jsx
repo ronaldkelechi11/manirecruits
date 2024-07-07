@@ -23,6 +23,7 @@ const Clients = () => {
                 <img src={nabroLogo} className="h-16 min-w-32 mx-5" />
                 <img src={tscLogo} className="h-16 min-w-32 mx-5" />
                 <img src={ukiriLogo} className="h-16 min-w-32 mx-5" />
+                {/* TODO: Add the remaining Clients */}
             </Marquee>
         </AnimatedDiv>
     )

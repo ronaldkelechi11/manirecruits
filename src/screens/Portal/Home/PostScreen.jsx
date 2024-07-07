@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import AnimatedDiv from '../../../utils/animations/AnimatedDiv'
 import TopNavBar from '../../../utils/components/TopNavbar'
-import { Calendar } from '@iconsans/react/linear'
 
 const PostScreen = () => {
     const [post, setPost] = useState(
@@ -50,7 +49,7 @@ const PostScreen = () => {
 
                 <div className="flex flex-row items-center gap-3 text-sm text-slate-400">Post uploaded: {post.job_upload_date}</div>
 
-                <p className="text-3xl mt-10 font-poppins capitalize font-extrabold text-black">
+                <p className="text-3xl mt-5 font-poppins capitalize font-extrabold text-black">
                     <strong>{post.title}</strong>
                 </p>
 
