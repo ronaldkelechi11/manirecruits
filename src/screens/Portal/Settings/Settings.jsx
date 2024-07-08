@@ -44,7 +44,7 @@ const Settings = () => {
         <div className='w-screen flex mb-20 flex-col bg-primary'>
 
             {/* Just an extra buttton */}
-            <div className="text-white sticky text-4xl fixed top-0 left-0 p-5"
+            <div className="text-white text-4xl fixed top-0 left-0 p-5"
                 onClick={() => { navigate('/home') }}>
                 <ArrowLeft />
             </div>

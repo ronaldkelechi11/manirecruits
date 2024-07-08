@@ -4,6 +4,7 @@ import AnimatedDiv from '../../../utils/animations/AnimatedDiv'
 import TopNavBar from '../../../utils/components/TopNavbar'
 import NormalInput from '../../../utils/components/NormalInput'
 import manirecruitsLogo from '../../../assets/images/logo_black_nobg.png'
+import { Send } from '@iconsans/react/linear'
 
 
 const CreatePost = () => {
@@ -11,7 +12,7 @@ const CreatePost = () => {
         "Phd"]
     const experience_level = ["Experience Level", "Entry level", "Intermediate Level"]
 
-    const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", ""]
+    const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
 
 
     const [post, setPost] = useState(
@@ -43,7 +44,7 @@ const CreatePost = () => {
         <AnimatedDiv className='w-screen'>
             <TopNavBar title={'Create Post'} />
 
-            <form className="w-full h-full flex flex-col gap-3 p-3 mt-16 mb-10">
+            <form className="w-full h-full flex flex-col gap-3 p-3 mt-16 mb-5">
                 <p className='text-center text-lg text-black font-kanit'>Fill in the Job criteria below</p>
 
                 <img src={manirecruitsLogo} alt="" className='w-20 h-20 rounded-none self-center' />
@@ -78,16 +79,22 @@ const CreatePost = () => {
                 <NormalInput type={'text'} placeholder={'Maximum Salary (200,000)'} />
 
                 {/* Working Days */}
-                <div className="flex-col flex items-center">
+                <div className="flex-col flex items-center border border-grey p-3">
                     <p className='text-xl text-black font-extrabold uppercase'>Working days</p>
-                    <div className="">
-
-                    </div>
+                    {days.map(day => {
+                        return (
+                            <div className="flex flex-row  gap-5">
+                                {/* TODO: Work on this logic */}
+                                <input type="checkbox" />
+                                <p>{day}</p>
+                            </div>
+                        )
+                    })}
                 </div>
 
 
                 {/* Working Hours */}
-                <div className="flex-col flex items-center">
+                <div className="flex-col flex items-center border border-grey p-3">
                     <p className='text-xl text-black font-extrabold uppercase'>Working hours</p>
                     <label htmlFor="">From</label>
                     <input type="time" name="" id="" />
@@ -96,6 +103,8 @@ const CreatePost = () => {
                     <label htmlFor="">To</label>
                     <input type="time" name="" id="" />
                 </div>
+
+                <button type="submit" className='bg-primary text-white text-xl rounded-lg h-16 uppercase font-extrabold'>Upload</button>
             </form>
 
         </AnimatedDiv >
