@@ -4,16 +4,25 @@ import AnimatedDiv from '../../../utils/animations/AnimatedDiv'
 import TopNavBar from '../../../utils/components/TopNavbar'
 import NormalInput from '../../../utils/components/NormalInput'
 import manirecruitsLogo from '../../../assets/images/logo_black_nobg.png'
-import { Send } from '@iconsans/react/linear'
+import ScrollToLeft from '../../../utils/animations/ScrollToLeft'
 
 
 const CreatePost = () => {
-    const qualification_levels = ["Qualification Level", "FSLC", "WAEC/NECO", "HND", "OND", "B.A", "B.SC", "Masters Degree",
-        "Phd"]
-    const experience_level = ["Experience Level", "Entry level", "Intermediate Level"]
+    const qualification_levels = ["Qualification Level", "None", "FSLC", "WAEC/NECO", "HND", "OND", "B.A", "B.SC", "Masters Degree", "Phd"]
+    const experience_level = ["Experience Level", "Entry level", "Intermediate Level", "Mid Level"]
 
     const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
 
+    function addToWorkingDays(date) {
+        // Search if the date is already on the list then if yes remove 0 if no add -1
+        if (post.working_days.indexOf(date) === -1) {
+            post.working_days.push(date)
+        }
+        else {
+            post.working_days.pop(date)
+        }
+        console.log(post.working_days);
+    }
 
     const [post, setPost] = useState(
         {
@@ -22,11 +31,7 @@ const CreatePost = () => {
             minimum_qualification: "",
             experience_level: "",
             experience_length: "2",
-            skills: [
-                "Proficiency in bla bla bla",
-                "Proficiency in bla bla bla",
-                "Good commuinication and Collaboration skills",
-            ],
+            skills: [],
             likes: 0,
             views: 0,
             applications: 0,
@@ -38,10 +43,10 @@ const CreatePost = () => {
             job_upload_date: "",
             salaray_range: "",
             working_hours: "",
-            working_days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
+            working_days: []
         })
     return (
-        <AnimatedDiv className='w-screen'>
+        <ScrollToLeft className='w-screen'>
             <TopNavBar title={'Create Post'} />
 
             <form className="w-full h-full flex flex-col gap-3 p-3 mt-16 mb-5">
@@ -78,14 +83,20 @@ const CreatePost = () => {
 
                 <NormalInput type={'text'} placeholder={'Maximum Salary (200,000)'} />
 
+                <textarea className='min-h-24 border-grey border p-5 rounded-lg' placeholder='Required Skills'>
+
+                </textarea>
+
                 {/* Working Days */}
                 <div className="flex-col flex items-center border border-grey p-3">
                     <p className='text-xl text-black font-extrabold uppercase'>Working days</p>
                     {days.map(day => {
                         return (
                             <div className="flex flex-row  gap-5">
-                                {/* TODO: Work on this logic */}
-                                <input type="checkbox" />
+                                <input type="checkbox" value={day}
+                                    onClick={(e) => {
+                                        addToWorkingDays(e.target.value.toString())
+                                    }} />
                                 <p>{day}</p>
                             </div>
                         )
@@ -98,6 +109,8 @@ const CreatePost = () => {
                     <p className='text-xl text-black font-extrabold uppercase'>Working hours</p>
                     <label htmlFor="">From</label>
                     <input type="time" name="" id="" />
+
+                    <br />
                     <br />
 
                     <label htmlFor="">To</label>
@@ -107,7 +120,7 @@ const CreatePost = () => {
                 <button type="submit" className='bg-primary text-white text-xl rounded-lg h-16 uppercase font-extrabold'>Upload</button>
             </form>
 
-        </AnimatedDiv >
+        </ScrollToLeft >
     )
 }
 
