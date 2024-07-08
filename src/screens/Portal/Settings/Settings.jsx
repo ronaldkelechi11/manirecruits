@@ -22,6 +22,8 @@ const Settings = () => {
         isVerified: false,
         followers: 149,
         following: 200,
+        religeon: "Christianity",
+        state_of_origin: "Abuja",
         posts: [],
         phone_number: '+2349023456789',
         address: {

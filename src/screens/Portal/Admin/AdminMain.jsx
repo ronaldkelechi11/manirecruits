@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { Message, MessagePlus, Pencil, User1, Users1 } from '@iconsans/react/linear'
 import AdminBottonNavBar from '../../../utils/components/AdminBottomNavBar'
 import manirecruitsLogo from '../../../assets/images/logo_black_nobg.png'
@@ -27,26 +27,25 @@ const AdminMain = () => {
             <TopBar />
 
             {/* Count displays */}
-            <div className="w-full p-3 flex flex-row gap-3">
-                <div className="min-h-[150px] w-[50%] bg-primary rounded-lg flex flex-col justify-between p-2">
+            <div className="w-full p-3 grid grid-cols-2 md:grid-cols-4 gap-3">
+                <div className="min-h-[150px] w-[100%] bg-primary rounded-lg flex flex-col justify-between p-2">
                     <p className="text-white text-xl font-kanit"> <User1 className='text-white text-3xl' />Active Users</p>
                     <p className='text-white text-4xl font-extrabold'>{userCount}</p>
                 </div>
 
-                <div className="min-h-[150px] w-[50%] bg-orange-700 rounded-lg flex flex-col justify-between p-2">
+                <div className="min-h-[150px] w-[100%] bg-orange-700 rounded-lg flex flex-col justify-between p-2">
                     <p className="text-white text-xl font-kanit">
                         <Users1 className='text-white text-3xl' />Active Clients</p>
                     <p className='text-white text-4xl font-extrabold'>{clientCount}</p>
                 </div>
-            </div>
-            <div className="w-full p-3 flex flex-row gap-3">
-                <div className="min-h-[150px] w-[50%] bg-green-700 rounded-lg flex flex-col justify-between p-2">
+
+                <div className="min-h-[150px] w-[100%] bg-green-700 rounded-lg flex flex-col justify-between p-2">
                     <p className="text-white text-xl font-kanit">
                         <Message className='text-white text-3xl' />Total Posts</p>
                     <p className='text-white text-4xl font-extrabold'>{postsCount}</p>
                 </div>
 
-                <div className="min-h-[150px] w-[50%] bg-blue-700 rounded-lg flex flex-col justify-between p-2">
+                <div className="min-h-[150px] w-[100%] bg-blue-700 rounded-lg flex flex-col justify-between p-2">
                     <p className="text-white text-xl font-kanit">
                         <MessagePlus className='text-white text-3xl' />Unapproved Posts</p>
                     <p className='text-white text-4xl font-extrabold'>{unApprovedPosts}</p>
@@ -60,9 +59,9 @@ const AdminMain = () => {
 
 
             {/* FAB */}
-            <div className="w-16 h-16 rounded-full bg-primary text-white flex justify-center items-center text-3xl fixed bottom-24 right-5">
+            <Link to={'create'} className="w-16 h-16 rounded-full bg-primary text-white flex justify-center items-center text-3xl fixed bottom-24 right-5">
                 <Pencil onContextMenu={'Create post'} />
-            </div>
+            </Link>
 
 
             <AdminBottonNavBar />
