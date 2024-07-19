@@ -1,6 +1,5 @@
 /* eslint-disable react/jsx-key */
 import { useState } from 'react'
-import AnimatedDiv from '../../../utils/animations/AnimatedDiv'
 import TopNavBar from '../../../utils/components/TopNavbar'
 import NormalInput from '../../../utils/components/NormalInput'
 import manirecruitsLogo from '../../../assets/images/logo_black_nobg.png'
@@ -9,9 +8,11 @@ import ScrollToLeft from '../../../utils/animations/ScrollToLeft'
 
 const CreatePost = () => {
     const qualification_levels = ["Qualification Level", "None", "FSLC", "WAEC/NECO", "HND", "OND", "B.A", "B.SC", "Masters Degree", "Phd"]
-    const experience_level = ["Experience Level", "Entry level", "Intermediate Level", "Mid Level"]
-
+    const experience_level = ["Experience Level", "None", "Entry level", "Intermediate Level", "Mid Level", "Senior level", "Executive Level"]
     const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+    const genders = ["Preffered Gender", "None", "Male", "Female"]
+    const currencys = ["Salary Currency", "USD ($)", "NGN (&amp8542;)", "EUR (€)", "GBP (£)"]
+
 
     function addToWorkingDays(date) {
         // Search if the date is already on the list then if yes remove 0 if no add -1
@@ -21,7 +22,6 @@ const CreatePost = () => {
         else {
             post.working_days.pop(date)
         }
-        console.log(post.working_days);
     }
 
     const [post, setPost] = useState(
@@ -30,7 +30,7 @@ const CreatePost = () => {
             summary: "",
             minimum_qualification: "",
             experience_level: "",
-            experience_length: "2",
+            experience_length: "",
             skills: [],
             likes: 0,
             views: 0,
@@ -42,10 +42,18 @@ const CreatePost = () => {
             job_industry: "",
             job_upload_date: "",
             salaray_range: "",
+            preffrered_gender: "",
+            plus_commision: "",
+            salary_currency: [],
             working_hours: "",
             working_days: []
         })
+
+
+
     return (
+
+        // TODO: Change to an easier form handler
         <ScrollToLeft className='w-screen'>
             <TopNavBar title={'Create Post'} />
 
@@ -56,10 +64,10 @@ const CreatePost = () => {
                 <NormalInput type={'text'} value={'Mani Recruits and Training'} />
                 <NormalInput type={'text'} value={'Human Resource and Management'} />
 
-                <NormalInput type="text" placeholder='Title' />
-                <textarea className='min-h-24 border-grey border p-5 rounded-lg' placeholder='Job summary'></textarea>
+                <NormalInput type="text" placeholder='Title (Required)' maxLength={64} required />
+                <textarea className='min-h-24 border-grey border p-5 rounded-lg' required maxLength={256} placeholder='Job summary (Required)'></textarea>
 
-                <select className='h-16 border-grey border p-5 rounded-lg'>
+                <select className='h-16 border-grey border p-5 rounded-lg  text-slate-400'>
                     {qualification_levels.map(level => {
                         return (
                             <option value={level}>{level}</option>
@@ -67,7 +75,7 @@ const CreatePost = () => {
                     })}
                 </select>
 
-                <select className='h-16 border-grey border p-5 rounded-lg'>
+                <select className='h-16 border-grey border p-5 rounded-lg  text-slate-400'>
                     {experience_level.map(level => {
                         return (
                             <option value={level}>{level}</option>
@@ -75,13 +83,39 @@ const CreatePost = () => {
                     })}
                 </select>
 
-                <NormalInput type={'number'} placeholder={"Experience Years"} maxLength={2} />
+                <NormalInput type={'number'} placeholder={"Experience Years (Required)"} maxLength={20} required />
+
+                <select className='h-16 border-grey border p-5 rounded-lg text-slate-400'>
+                    {genders.map(gender => {
+                        return (
+                            <option value={gender}>{gender}</option>
+                        )
+                    })}
+                </select>
+
                 <NormalInput type={'text'} placeholder={'Location'} />
                 <NormalInput type={'text'} placeholder={'Job Industry'} />
 
-                <NormalInput type={'text'} placeholder={'Minimum Salary (30,000)'} />
+                {/* Salary Currency */}
+                <select className='h-16 border-grey border p-5 rounded-lg text-slate-400'>
+                    {currencys.map(currency => {
+                        return (
+                            <option value={currency}>{currency}</option>
+                        )
+                    })}
+                </select>
+
+                <NormalInput type={'text'} placeholder={'Minimum Salary (50,000)'} />
 
                 <NormalInput type={'text'} placeholder={'Maximum Salary (200,000)'} />
+
+                <div className="flex flex-row gap-5 justify-center">
+                    <input type="checkbox" value={''}
+                        onClick={(e) => {
+                            addToWorkingDays(e.target.value.toString())
+                        }} />
+                    <p>Plus Commision</p>
+                </div>
 
                 <textarea className='min-h-24 border-grey border p-5 rounded-lg' placeholder='Required Skills'>
 
@@ -108,13 +142,13 @@ const CreatePost = () => {
                 <div className="flex-col flex items-center border border-grey p-3">
                     <p className='text-xl text-black font-extrabold uppercase'>Working hours</p>
                     <label htmlFor="">From</label>
-                    <input type="time" name="" id="" />
+                    <input type="time" />
 
                     <br />
                     <br />
 
                     <label htmlFor="">To</label>
-                    <input type="time" name="" id="" />
+                    <input type="time" />
                 </div>
 
                 <button type="submit" className='bg-primary text-white text-xl rounded-lg h-16 uppercase font-extrabold'>Upload</button>
