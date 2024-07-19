@@ -2,11 +2,11 @@ import AnimatedDiv from "../../utils/animations/AnimatedDiv"
 import Marquee from 'react-fast-marquee'
 
 // Client Logos
-import dreamCityLogo from '../../assets/images/logos/dreamcity_logo.png'
-import delmarLogo from '../../assets/images/logos/delmar_logo.jpg'
-import nabroLogo from '../../assets/images/logos/NABRO-LOGO.png'
-import tscLogo from '../../assets/images/logos/the_slate_center_logo.png'
-import ukiriLogo from '../../assets/images/logos/UL-100-e1556783816972.png'
+import dreamCityLogo from '/public/assets/images/logos/dreamcity_logo.png'
+import delmarLogo from '/public/assets/images/logos/delmar_logo.jpg'
+import nabroLogo from '/public/assets/images/logos/NABRO-LOGO.png'
+import tscLogo from '/public/assets/images/logos/the_slate_center_logo.png'
+import ukiriLogo from '/public/assets/images/logos/UL-100-e1556783816972.png'
 
 
 

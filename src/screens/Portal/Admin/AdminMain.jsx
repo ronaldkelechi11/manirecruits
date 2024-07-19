@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { Message, MessagePlus, Pencil, User1, Users1 } from '@iconsans/react/linear'
 import AdminBottonNavBar from '../../../utils/components/AdminBottomNavBar'
-import manirecruitsLogo from '../../../assets/images/logo_black_nobg.png'
+import manirecruitsLogo from '/public/assets/images/logo_black_nobg.png'
 
 const AdminMain = () => {
     const navigate = useNavigate()

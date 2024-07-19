@@ -2,7 +2,7 @@
 import { useState } from 'react'
 import TopNavBar from '../../../utils/components/TopNavbar'
 import NormalInput from '../../../utils/components/NormalInput'
-import manirecruitsLogo from '../../../assets/images/logo_black_nobg.png'
+import manirecruitsLogo from '../../../../public/assets/images/logo_black_nobg.png'
 import ScrollToLeft from '../../../utils/animations/ScrollToLeft'
 
 

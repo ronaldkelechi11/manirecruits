@@ -1,5 +1,5 @@
 import ScrollToLeft from "../../utils/animations/ScrollToLeft"
-import VerifyIcon from "../../assets/svgs/verify.svg"
+import VerifyIcon from "/public/assets/svgs/verify.svg"
 import CustomButton from "../../utils/components/CustomButton"
 import { motion } from "framer-motion"
 import { Link, useNavigate } from "react-router-dom"

@@ -1,7 +1,7 @@
 import { MenuHamburger, MenuHotdog } from "@iconsans/react/linear"
 import { useState } from "react"
 import { Link, NavLink } from "react-router-dom"
-import Logo from '../../assets/images/logo_white_nobg.png'
+import Logo from '/public/assets/images/logo_white_nobg.png'
 
 
 const Navbar = () => {

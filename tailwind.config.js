@@ -20,7 +20,7 @@ export default {
         idle: 'rgba(255, 255, 255, 0.5)'
       },
       backgroundImage: {
-        hero: "url('./src/assets/images/hero.jpg')"
+        hero: "url('./public/assets/images/hero.jpg')"
       },
       fontFamily: {
         kanit: 'Kanit',
