@@ -10,8 +10,37 @@ const CreatePost = () => {
     const qualification_levels = ["Qualification Level", "None", "FSLC", "WAEC/NECO", "HND", "OND", "B.A", "B.SC", "Masters Degree", "Phd"]
     const experience_level = ["Experience Level", "None", "Entry level", "Intermediate Level", "Mid Level", "Senior level", "Executive Level"]
     const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
-    const genders = ["Preffered Gender", "None", "Male", "Female"]
-    const currencys = ["Salary Currency", "USD ($)", "NGN (&amp8542;)", "EUR (€)", "GBP (£)"]
+    const genders = ["Preffered Job Gender", "None", "Male", "Female"]
+    const currencys = ["Salary Currency", "USD ($)", "NGN (N)", "EUR (€)", "GBP (£)"]
+
+    // Form States
+    const [title, setTitle] = useState("")
+    const [summary, setSummary] = useState()
+    const [minimumQualification, setMinimumQualification] = useState("")
+    const [experienceLevel, setExperienceLevel] = useState("")
+    const [experienceLength, setExperienceLength] = useState("")
+    const [skills, setSkills] = useState("")
+    const [applications, setApplications] = useState(0)
+    const [location, setLocation] = useState()
+    const [organisationLogo, setOrganisationLogo] = useState(manirecruitsLogo)
+    const [organisationName, setOrganisationName] = useState("Mani Recruits Name")
+    const [organisationIndustry, setOrganisationIndustry] = useState("Human Resource and Management")
+    const [jobIndustry, setJobIndustry] = useState("")
+    const [jobUploadDate, setJobUploadDate] = useState("")
+    const [salaryMinRange, setSalaryMinRange] = useState("")
+    const [salaryMaxRange, setSalaryMaxRange] = useState("")
+    const [salaryRange, setSalaryRange] = useState("")
+    const [preffered_gender, setPrefferedGender] = useState("")
+    const [plusCommision, setPlusCommision] = useState("")
+    const [salary_currency, setSalaryCurrency] = useState("")
+    const [working_hours, setWorkingHours] = useState("")
+    const [working_days, setWorkingDays] = useState("")
+
+
+
+
+
+
 
 
     function addToWorkingDays(date) {
@@ -32,32 +61,32 @@ const CreatePost = () => {
             experience_level: "",
             experience_length: "",
             skills: [],
-            likes: 0,
-            views: 0,
             applications: 0,
             location: "",
-            organisation_logo: { manirecruitsLogo },
-            organisation: "Mani Recruits and Training",
-            industry: "Human Resource and Management",
+            organisation_logo: organisationLogo,
+            organisation_name: organisationName,
+            industry: organisationIndustry,
             job_industry: "",
             job_upload_date: "",
             salaray_range: "",
-            preffrered_gender: "",
+            preffered_gender: "",
             plus_commision: "",
             salary_currency: [],
             working_hours: "",
             working_days: []
         })
 
+    function submitForm(e) {
+        e.preventDefault()
+        // After form is filled ask for confirmation then display a page that shows how it will look for users
+    }
 
 
     return (
-
-        // TODO: Change to an easier form handler
         <ScrollToLeft className='w-screen'>
             <TopNavBar title={'Create Post'} />
 
-            <form className="w-full h-full flex flex-col gap-3 p-3 mt-16 mb-5">
+            <form className="w-full h-full flex flex-col gap-3 p-3 mt-16 mb-5" onSubmit={submitForm}>
                 <p className='text-center text-lg text-black font-kanit'>Fill in the Job criteria below</p>
 
                 <img src={manirecruitsLogo} alt="" className='w-20 h-20 rounded-none self-center' />
@@ -65,6 +94,7 @@ const CreatePost = () => {
                 <NormalInput type={'text'} value={'Human Resource and Management'} />
 
                 <NormalInput type="text" placeholder='Title (Required)' maxLength={64} required />
+
                 <textarea className='min-h-24 border-grey border p-5 rounded-lg' required maxLength={256} placeholder='Job summary (Required)'></textarea>
 
                 <select className='h-16 border-grey border p-5 rounded-lg  text-slate-400'>
@@ -94,6 +124,7 @@ const CreatePost = () => {
                 </select>
 
                 <NormalInput type={'text'} placeholder={'Location'} />
+                
                 <NormalInput type={'text'} placeholder={'Job Industry'} />
 
                 {/* Salary Currency */}
