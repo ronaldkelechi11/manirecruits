@@ -4,6 +4,7 @@ import TopNavBar from '../../../utils/components/TopNavbar'
 import NormalInput from '../../../utils/components/NormalInput'
 import manirecruitsLogo from '../../../../public/assets/images/logo_black_nobg.png'
 import ScrollToLeft from '../../../utils/animations/ScrollToLeft'
+import { Form } from 'react-router-dom'
 
 
 const CreatePost = () => {
@@ -49,7 +50,20 @@ const CreatePost = () => {
         e.preventDefault()
         // After form is filled ask for confirmation then display a page that shows how it will look for users
 
+        const formatter = new Intl.NumberFormat('en-US', {
+            style: 'currency',
+            currency: 'NGN',
+        });
+
+        setSalaryMinRange(formatter.format(salaryMinRange))
+        setSalaryMaxRange(formatter.format(salaryMaxRange))
+
         // Form Validation
+        var date = new Date()
+        var dd = date.getDay()
+        var mm = date.getMonth()
+        var yyyy = date.getFullYear()
+
 
         const post = {
             title: title,
@@ -64,7 +78,7 @@ const CreatePost = () => {
             organisationName: organisationName,
             organisationIndustry: organisationIndustry,
             jobIndustry: jobIndustry,
-            jobUploadDate: '',
+            jobUploadDate: `${dd}-${mm}-${yyyy}`,
             salaryRange: `${salaryMinRange} - ${salaryMaxRange}`,
             prefferedGender: prefferedGender,
             plusCommision: plusCommision,
