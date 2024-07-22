@@ -19,6 +19,7 @@ import UpdateUserTitle from './screens/Portal/Settings/UpdateUserTitle'
 import UpdateContactDetails from './screens/Portal/Settings/UpdateContactDetails'
 import PostScreen from './screens/Portal/Home/PostScreen'
 import CreatePost from './screens/Portal/Admin/CreatePost'
+import TestPostScreen from './screens/Portal/Admin/ApprovePostScreen'
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -69,6 +70,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <Route path='/admin'>
         <Route index element={<AdminMain />} />
         <Route path='create' element={<CreatePost />} />
+        <Route path='create/approve' element={<TestPostScreen />} />
       </Route>
 
 

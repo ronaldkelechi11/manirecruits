@@ -4,15 +4,19 @@ import TopNavBar from '../../../utils/components/TopNavbar'
 import NormalInput from '../../../utils/components/NormalInput'
 import manirecruitsLogo from '../../../../public/assets/images/logo_black_nobg.png'
 import ScrollToLeft from '../../../utils/animations/ScrollToLeft'
-import { Form } from 'react-router-dom'
+import { Form, useNavigate } from 'react-router-dom'
+import TestPostScreen from './ApprovePostScreen'
 
 
 const CreatePost = () => {
+    const navigate = useNavigate()
+
+
     const qualification_levels = ["Qualification Level", "None", "FSLC", "WAEC/NECO", "HND", "OND", "B.A", "B.SC", "Masters Degree", "Phd"]
     const experience_level = ["Experience Level", "None", "Entry level", "Intermediate Level", "Mid Level", "Senior level", "Executive Level"]
     const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
     const genders = ["Preffered Job Gender", "None", "Male", "Female"]
-    const currencys = ["Salary Currency", "USD ($)", "NGN (N)", "EUR (€)", "GBP (£)"]
+    const currencys = ["Salary Currency", "USD", "NGN", "EUR", "GBP"]
 
     // Form States
     const [title, setTitle] = useState("")
@@ -48,15 +52,11 @@ const CreatePost = () => {
 
     function submitForm(e) {
         e.preventDefault()
-        // After form is filled ask for confirmation then display a page that shows how it will look for users
 
         const formatter = new Intl.NumberFormat('en-US', {
             style: 'currency',
-            currency: 'NGN',
+            currency: `${salaryCurrency}`,
         });
-
-        setSalaryMinRange(formatter.format(salaryMinRange))
-        setSalaryMaxRange(formatter.format(salaryMaxRange))
 
         // Form Validation
         var date = new Date()
@@ -79,13 +79,14 @@ const CreatePost = () => {
             organisationIndustry: organisationIndustry,
             jobIndustry: jobIndustry,
             jobUploadDate: `${dd}-${mm}-${yyyy}`,
-            salaryRange: `${salaryMinRange} - ${salaryMaxRange}`,
+            salaryRange: `${formatter.format(salaryMinRange)} - ${formatter.format(salaryMaxRange)}`,
             prefferedGender: prefferedGender,
             plusCommision: plusCommision,
             salaryCurrency: salaryCurrency,
             workingDays: workingDays
         }
 
+        navigate(<TestPostScreen />)
         console.log(post);
     }
 
@@ -102,9 +103,9 @@ const CreatePost = () => {
                 <NormalInput type={'text'} value={organisationName} />
                 <NormalInput type={'text'} value={organisationIndustry} />
 
-                <NormalInput type="text" placeholder='Title (Required)' maxLength={64} required value={title} onChange={(e) => { setTitle(e.target.value) }} />
+                <NormalInput type="text" placeholder='Title' maxLength={64} required value={title} onChange={(e) => { setTitle(e.target.value) }} />
 
-                <textarea className='min-h-24 border-grey border p-5 rounded-lg' required maxLength={256} placeholder='Job summary (Required)' value={summary} onChange={(e) => { setSummary(e.target.value) }}></textarea>
+                <textarea className='min-h-24 border-grey border p-5 rounded-lg' required maxLength={256} placeholder='Job summary' value={summary} onChange={(e) => { setSummary(e.target.value) }}></textarea>
 
                 <select className='h-16 border-grey border p-5 rounded-lg  text-slate-400' onChange={(e) => { setMinimumQualification(e.target.value) }} required>
                     {qualification_levels.map(level => {

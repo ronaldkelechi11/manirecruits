@@ -2,7 +2,7 @@ import { useState } from 'react'
 import AnimatedDiv from '../../../utils/animations/AnimatedDiv'
 import TopNavBar from '../../../utils/components/TopNavbar'
 
-const TestPostScreen = () => {
+const ApprovePostScreen = () => {
     const [post, setPost] = useState(
         {
             title: "Content Creation and Social media management",
@@ -98,4 +98,4 @@ const TestPostScreen = () => {
     )
 }
 
-export default TestPostScreen
+export default ApprovePostScreen
