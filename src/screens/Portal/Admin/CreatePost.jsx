@@ -78,7 +78,7 @@ const CreatePost = () => {
             organisationName: organisationName,
             organisationIndustry: organisationIndustry,
             jobIndustry: jobIndustry,
-            jobUploadDate: `${dd}-${mm}-${yyyy}`,
+            jobUploadDate: `${dd}/${mm}/${yyyy}`,
             salaryRange: `${formatter.format(salaryMinRange)} - ${formatter.format(salaryMaxRange)}`,
             prefferedGender: prefferedGender,
             plusCommision: plusCommision,
@@ -86,7 +86,7 @@ const CreatePost = () => {
             workingDays: workingDays
         }
 
-        navigate(<TestPostScreen />)
+        navigate('approve', { state: { post } })
         console.log(post);
     }
 
