@@ -8,7 +8,7 @@
 
 /* Custom CSS */
 #bnb a.active {
-    @apply text-primary font-extrabold text-4xl border-b-2 border-primary;
+    @apply text-primary font-extrabold text-4xl;
 }
 
 #adminbnb a.active {

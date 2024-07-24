@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { Message, MessagePlus, Pencil, User1, Users1 } from '@iconsans/react/linear'
+import { Logout, Message, MessagePlus, Pencil, User1, Users1 } from '@iconsans/react/linear'
 import AdminBottonNavBar from '../../../utils/components/AdminBottomNavBar'
-import manirecruitsLogo from '/public/assets/images/logo_black_nobg.png'
 import axios from 'axios'
 
 const AdminMain = () => {
@@ -16,7 +15,9 @@ const AdminMain = () => {
 
 
     useEffect(() => {
-        if (!localStorage.getItem("ADMIN_IS_LOGGED_IN")) {
+        console.log(localStorage.getItem("ADMIN_IS_LOGGED_IN"));
+
+        if (localStorage.getItem("ADMIN_IS_LOGGED_IN") == 'false' || localStorage.getItem("ADMIN_IS_LOGGED_IN") == undefined) {
             alert("Protected Route")
             navigate('/')
         }
@@ -31,7 +32,6 @@ const AdminMain = () => {
                 });
         }
     }, [])
-
 
     return (
         <div className='w-screen h-screen flex flex-col bg-grey'>
@@ -64,11 +64,6 @@ const AdminMain = () => {
             </div>
 
 
-            <div className="w-full h-full mb-20 p-3">
-                <div className="w-full h-full bg-white rounded-[10px_10px]"></div>
-            </div>
-
-
             {/* FAB */}
             <Link to={'create'} className="w-16 h-16 rounded-full bg-primary text-white flex justify-center items-center text-3xl fixed bottom-24 right-5">
                 <Pencil onContextMenu={'Create post'} />
@@ -81,6 +76,19 @@ const AdminMain = () => {
 }
 
 function TopBar() {
+    const navigate = useNavigate()
+
+    function logOut() {
+        if (confirm('Are you sure you want to logout from Admin?')) {
+            console.log('confirmed');
+            navigate('/')
+            localStorage.setItem("ADMIN_IS_LOGGED_IN", false)
+        }
+        else {
+            return false
+        }
+    }
+
     return (
         <div className="flex flex-row justify-between items-center p-3 font-kanit">
             <div className="flex-col">
@@ -88,8 +96,8 @@ function TopBar() {
                 <p className='text-3xl font-extrabold'>Administrator</p>
             </div>
 
-            <div className="w-12 h-12 rounded-full">
-                <img src={manirecruitsLogo} alt="" />
+            <div className="w-12 h-12 rounded-full flex justify-center items-center text-2xl cursor-pointer bg-primary text-white" onClick={logOut}>
+                <Logout />
             </div>
         </div>
     )
