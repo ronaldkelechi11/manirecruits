@@ -145,9 +145,9 @@ const CreatePost = () => {
                     })}
                 </select>
 
-                <NormalInput type={'text'} placeholder={'Minimum Salary (50,000)'} value={salaryMinRange} onChange={(e) => { setSalaryMinRange(e.target.value) }} />
+                <NormalInput type={'text'} min='50000' placeholder={'Minimum Salary (50,000)'} value={salaryMinRange} onChange={(e) => { setSalaryMinRange(e.target.value) }} />
 
-                <NormalInput type={'text'} placeholder={'Maximum Salary (200,000)'} value={salaryMaxRange} onChange={(e) => { setSalaryMaxRange(e.target.value) }} />
+                <NormalInput type={'text'} max='10000000' placeholder={'Maximum Salary (200,000)'} value={salaryMaxRange} onChange={(e) => { setSalaryMaxRange(e.target.value) }} />
 
 
                 <div className="flex flex-row gap-5 justify-center">

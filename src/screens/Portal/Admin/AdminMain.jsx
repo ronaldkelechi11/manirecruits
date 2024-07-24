@@ -3,21 +3,32 @@ import { Link, useNavigate } from 'react-router-dom'
 import { Message, MessagePlus, Pencil, User1, Users1 } from '@iconsans/react/linear'
 import AdminBottonNavBar from '../../../utils/components/AdminBottomNavBar'
 import manirecruitsLogo from '/public/assets/images/logo_black_nobg.png'
+import axios from 'axios'
 
 const AdminMain = () => {
     const navigate = useNavigate()
     document.title = "Admin - Mani Recruits and Training"
 
-    const [userCount, setUserCount] = useState(34)
-    const [clientCount, setClientCount] = useState(25)
-    const [postsCount, setPostCount] = useState(50)
-    const [unApprovedPosts, setUpapprovedPosts] = useState(40)
+    const [userCount, setUserCount] = useState(0)
+    const [clientCount, setClientCount] = useState(0)
+    const [postCount, setPostCount] = useState(0)
+    const [unApprovedPosts, setUpapprovedPosts] = useState('')
 
 
     useEffect(() => {
         if (!localStorage.getItem("ADMIN_IS_LOGGED_IN")) {
             alert("Protected Route")
             navigate('/')
+        }
+        else {
+            axios.get(`${import.meta.env.VITE_API_URL}/admin/main`)
+                .then(({ data }) => {
+                    setUserCount(data.userCount)
+                    setPostCount(data.postCount)
+                    setClientCount(data.activeClients)
+                }).catch((err) => {
+                    console.log(err);
+                });
         }
     }, [])
 
@@ -29,24 +40,24 @@ const AdminMain = () => {
             {/* Count displays */}
             <div className="w-full p-3 grid grid-cols-2 md:grid-cols-4 gap-3">
                 <div className="min-h-[150px] w-[100%] bg-primary rounded-lg flex flex-col justify-between p-2">
-                    <p className="text-white text-xl font-kanit"> <User1 className='text-white text-3xl' />Active Users</p>
+                    <p className="text-white text-sm font-poppins"> <User1 className='text-white text-3xl' />Active Users</p>
                     <p className='text-white text-4xl font-extrabold'>{userCount}</p>
                 </div>
 
                 <div className="min-h-[150px] w-[100%] bg-orange-700 rounded-lg flex flex-col justify-between p-2">
-                    <p className="text-white text-xl font-kanit">
+                    <p className="text-white text-sm font-poppins">
                         <Users1 className='text-white text-3xl' />Active Clients</p>
                     <p className='text-white text-4xl font-extrabold'>{clientCount}</p>
                 </div>
 
                 <div className="min-h-[150px] w-[100%] bg-green-700 rounded-lg flex flex-col justify-between p-2">
-                    <p className="text-white text-xl font-kanit">
+                    <p className="text-white text-sm font-poppins">
                         <Message className='text-white text-3xl' />Total Posts</p>
-                    <p className='text-white text-4xl font-extrabold'>{postsCount}</p>
+                    <p className='text-white text-4xl font-extrabold'>{postCount}</p>
                 </div>
 
                 <div className="min-h-[150px] w-[100%] bg-blue-700 rounded-lg flex flex-col justify-between p-2">
-                    <p className="text-white text-xl font-kanit">
+                    <p className="text-white text-sm font-poppins">
                         <MessagePlus className='text-white text-3xl' />Unapproved Posts</p>
                     <p className='text-white text-4xl font-extrabold'>{unApprovedPosts}</p>
                 </div>

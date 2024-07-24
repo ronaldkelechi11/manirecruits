@@ -18,10 +18,10 @@
 /* Using External Font-Faces */
 @font-face {
     font-family: 'Kanit';
-    src: url('../src/assets/fonts/Kanit-Regular.ttf');
+    src: url('../public/assets/fonts/Kanit-Regular.ttf');
 }
 
 @font-face {
     font-family: 'Poppins';
-    src: url('../src/assets/fonts/poppins.ttf');
+    src: url('../public/assets/fonts/poppins.ttf');
 }

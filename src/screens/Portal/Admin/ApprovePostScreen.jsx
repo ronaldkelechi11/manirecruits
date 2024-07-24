@@ -122,7 +122,7 @@ const ApprovePostScreen = () => {
                 <div className="flex flex-row items-center gap-3 text-[8px] text-slate-400">Post uploaded: {post.jobUploadDate}</div>
 
 
-                <div className="w-full bg-primary text-white font-kanit flex justify-center items-center rounded-lg p-3 text-xl" onClick={uploadToBackend}>
+                <div className="w-full bg-primary text-white font-kanit flex justify-center items-center rounded-lg p-3 text-xl cursor-pointer" onClick={uploadToBackend}>
                     Upload
                 </div>
 
