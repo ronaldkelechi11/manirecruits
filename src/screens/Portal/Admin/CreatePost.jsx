@@ -87,7 +87,6 @@ const CreatePost = () => {
         }
 
         navigate('approve', { state: { post } })
-        console.log(post);
     }
 
 
@@ -175,7 +174,7 @@ const CreatePost = () => {
                     })}
                 </div>
 
-                <button type="submit" className='bg-primary text-white text-xl rounded-lg h-16 uppercase font-extrabold'>Upload</button>
+                <button type="submit" className='bg-primary text-white text-xl rounded-lg h-16 uppercase font-extrabold font-poppins'>Upload</button>
             </form>
 
         </ScrollToLeft >
