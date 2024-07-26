@@ -1,9 +1,10 @@
 import { useNavigate } from 'react-router-dom'
 import BottomNavBar from '../../../utils/components/BottomNavBar'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import CustomLinkItem from '../../../utils/components/CustomLinkItem'
 import { ArrowLeft } from '@iconsans/react/bold'
 import { Tick, TickCircle } from '@iconsans/react/linear'
+import axios from 'axios'
 
 const Settings = () => {
     const navigate = useNavigate()
@@ -11,10 +12,10 @@ const Settings = () => {
 
     const [user, setUser] = useState({
         // PERSONAL INFORMATION
-        firstname: 'John',
-        lastname: 'Doe',
-        email_address: 'johndoe@gmail.com',
-        title: 'Software Developer',
+        firstname: 'placeholde',
+        lastname: 'r',
+        email_address: 'placeholder',
+        title: 'placeholder',
         profile_picture: '',
         date_of_birth: '',
         date_account_created: '',
@@ -34,6 +35,17 @@ const Settings = () => {
         },
     })
 
+    useEffect(() => {
+        axios.get(`${import.meta.env.VITE_API_URL}/dashboard/settings/${localStorage.getItem("USER_EMAIL")}`)
+            .then(({ data }) => {
+                console.log(data);
+                setUser(data[0])
+            }).catch((err) => {
+                alert(err)
+            });
+    }, [])
+
+
     // Click functions
     function logOut() {
         alert('Are you sure you want to log out now?')
@@ -52,7 +64,7 @@ const Settings = () => {
             {/* Show followers and following */}
             <div className="h-64 w-full bg-primary flex flex-col justify-center items-center font-kanit text-white p-5">
                 <p className='text-2xl text-slate-200'>Hello,👋</p>
-                <p className='text-5xl capitalize flex flex-row justify-center items-center'>
+                <p className='text-3xl capitalize flex flex-row justify-center items-center'>
                     {user.firstname}. {user.lastname.charAt(0)}
                     <p className='ml-3 text-3xl'>
                         <TickCircle className={user.isVerified ?

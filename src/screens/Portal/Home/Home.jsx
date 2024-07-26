@@ -12,7 +12,7 @@ const Home = () => {
     const [posts, setPosts] = useState([])
 
     useEffect(() => {
-        axios.get(`${import.meta.env.VITE_API_URL}/userdashboard/home`).
+        axios.get(`${import.meta.env.VITE_API_URL}/dashboard/home`).
             then(({ data }) => {
                 setPosts(data)
             }).catch((err) => {

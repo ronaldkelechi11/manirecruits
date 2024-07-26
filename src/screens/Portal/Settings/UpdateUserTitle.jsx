@@ -13,12 +13,14 @@ const UpdateUserTitle = () => {
 
     const [title, setTitle] = useState("")
 
-
     function updateTitle(e) {
         e.preventDefault();
-        console.log(`${import.meta.env.VITE_API_URL}/dashboard/edit/${title}/${USER_EMAIL}`);
-
-        // axios.post(`${import.meta.env.VITE_BACKEND_URL} /dashboard/edit/${title}/${USER_EMAIL}`)
+        axios.post(`${import.meta.env.VITE_API_URL}/dashboard/edit/title/${USER_EMAIL}`, { title: title }).then((result) => {
+            alert('Succesfully Changed User Title')
+            navigate('/settings')
+        }).catch((err) => {
+            console.log(err);
+        });
     }
 
     return (
