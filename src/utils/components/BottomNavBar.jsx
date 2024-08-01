@@ -16,10 +16,6 @@ const BottomNavBar = () => {
                 <Bell />
             </NavLink>
 
-            <NavLink to={'/messages'} className="h-full w-full text-3xl flex justify-center items-center text-slate-500">
-                <Message />
-            </NavLink>
-
             <NavLink to={'/settings'} className="h-full w-full text-3xl flex justify-center items-center text-slate-500">
                 <Setting />
             </NavLink>

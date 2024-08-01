@@ -13,7 +13,6 @@ import LoginMain from './screens/Login/LoginMain'
 import Home from './screens/Portal/Home/Home'
 import AdminMain from './screens/Portal/Admin/AdminMain'
 import Settings from './screens/Portal/Settings/Settings'
-import Messages from './screens/Portal/Messages/Messages'
 import Notifications from './screens/Portal/Notifications/Notifications'
 import UpdateUserTitle from './screens/Portal/Settings/UpdateUserTitle'
 import UpdateContactDetails from './screens/Portal/Settings/UpdateContactDetails'
@@ -56,10 +55,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route index element={<Settings />} />
         <Route path='updateUserTitle' element={<UpdateUserTitle />} />
         <Route path='updatecontactdetails' element={<UpdateContactDetails />} />
-      </Route>
-
-      <Route path='/messages'>
-        <Route index element={<Messages />} />
       </Route>
 
       <Route path='/notifications'>

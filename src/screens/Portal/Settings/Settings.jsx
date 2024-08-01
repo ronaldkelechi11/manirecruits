@@ -3,7 +3,7 @@ import BottomNavBar from '../../../utils/components/BottomNavBar'
 import { useEffect, useState } from 'react'
 import CustomLinkItem from '../../../utils/components/CustomLinkItem'
 import { ArrowLeft } from '@iconsans/react/bold'
-import { Tick, TickCircle } from '@iconsans/react/linear'
+import { TickCircle } from '@iconsans/react/linear'
 import axios from 'axios'
 
 const Settings = () => {
@@ -41,7 +41,8 @@ const Settings = () => {
                 console.log(data);
                 setUser(data[0])
             }).catch((err) => {
-                alert(err)
+                console.log(err);
+                alert(err?.message);
             });
     }, [])
 
@@ -84,14 +85,16 @@ const Settings = () => {
                 <div className="">
                 </div>
 
-                <div className="w-full grid grid-cols-2">
-                    <p className="font-kanit text-primary text-xl text-center">Followers</p>
-
-                    <p className="font-kanit text-primary text-xl text-center">Following</p>
-
-                    <p className="font-poppins text-xl text-center">{user.followers}</p>
-                    <p className="font-poppins text-xl text-center">{user.following}</p>
-                </div>
+                {
+                    /* <div className="w-full grid grid-cols-2">
+                        <p className="font-kanit text-primary text-xl text-center">Followers</p>
+    
+                        <p className="font-kanit text-primary text-xl text-center">Following</p>
+    
+                        <p className="font-poppins text-xl text-center">{user.followers}</p>
+                        <p className="font-poppins text-xl text-center">{user.following}</p>
+                    </div> */
+                }
 
 
                 <p className='text-2xl font-kanit text-primary'>Profile Settings</p>

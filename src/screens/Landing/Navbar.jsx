@@ -58,7 +58,8 @@ function NavLinks() {
             <a className={navbarStyling} href="#services">Our Services</a>
             <a className={navbarStyling} href="#contactus">Contact</a>
 
-            {/* Login and Signup Buttons */}
+            <Link to={'/login'} className={navbarStyling}>Log In</Link>
+
             <Link to={'/signup'}
                 className="rounded-lg w-full bg-white px-8 py-2 text-black text-[14px] font-poppins text-nowrap hover:bg-primary hover:text-white border-2 hover:border-white border-white text-center">
                 Sign Up
