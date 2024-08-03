@@ -24,18 +24,18 @@ const UpdateUserTitle = () => {
     }
 
     return (
-        <AnimatedDiv className="w-screen h-screen bg-white">
+        <AnimatedDiv className="w-screen h-screen bg-white flex flex-col">
             <TopNavBar title={'Update User Title'} />
 
-            <div className="w-full flex flex-col h-[50%] justify-between mt-16 p-3 bg-white">
+            <div className="w-full flex flex-col h-full justify-between mt-16 p-3 bg-white">
 
                 <div className="flex flex-col gap-3">
-                    <p className="font-poppins text-primary text-xl">New User Title</p>
+                    <p className="font-poppins text-primary text-sm">New User Title</p>
                     <NormalInput
                         placeholder={'Driver'}
                         value={title}
                         onChange={(e) => { setTitle(e.target.value) }}
-                        className='border-primary h-16 border-2 p-3 font-poppins rounded-lg text-xl' />
+                        className='border-primary h-16 border-2 p-3 font-poppins rounded-lg text-lg' />
                 </div>
 
                 <button className="bg-primary w-full h-16 rounded-lg text-white font-kanit flex justify-center items-center text-xl" onClick={updateTitle}>
