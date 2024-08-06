@@ -22,7 +22,7 @@ function PostItem({ post }) {
 
             <p><strong>Working Days: </strong>{post.workingDays.length} Days</p>
 
-            <Link to={'123'} className="w-full bg-primary text-white font-kanit flex justify-center items-center rounded-lg p-3 text-xl">
+            <Link to={post._id} state={{ post: post }} className="w-full bg-primary text-white font-kanit flex justify-center items-center rounded-lg p-3 text-xl">
                 See more
             </Link>
         </div>

@@ -11,13 +11,13 @@ const UpdateContactDetails = () => {
     const [phone_number, setPhoneNumber] = useState('')
     const [email_address, setEmailAddress] = useState('')
 
-    // fetch user current phone number and email address
+    // fetch user current info
     useEffect(() => {
-        axios.get(`${import.meta.env.VITE_API_URL}/dashboard/edit/contactdetails/${USER_EMAIL}`)
+        axios.get(`${import.meta.env.VITE_API_URL}/dashboard/edit/${USER_EMAIL}`)
             .then((result) => {
-
+                console.log(result?.data);
             }).catch((err) => {
-
+                console.log(err);
             });
     }, [])
 

@@ -38,7 +38,6 @@ const Settings = () => {
     useEffect(() => {
         axios.get(`${import.meta.env.VITE_API_URL}/dashboard/settings/${localStorage.getItem("USER_EMAIL")}`)
             .then(({ data }) => {
-                console.log(data);
                 setUser(data[0])
             }).catch((err) => {
                 console.log(err);
@@ -65,14 +64,14 @@ const Settings = () => {
             {/* Show followers and following */}
             <div className="h-64 w-full bg-primary flex flex-col justify-center items-center font-kanit text-white p-5">
                 <p className='text-2xl text-slate-200'>Hello,👋</p>
-                <p className='text-3xl capitalize flex flex-row justify-center items-center'>
-                    {user.firstname}. {user.lastname.charAt(0)}
-                    <p className='ml-3 text-3xl'>
+                <div className='text-3xl capitalize flex flex-row justify-center items-center'>
+                    <p>{user.firstname}. {user.lastname.charAt(0)}</p>
+                    <div className='ml-3 text-3xl'>
                         <TickCircle className={user.isVerified ?
                             "text-blue-400" :
                             "text-red-500"} />
-                    </p>
-                </p>
+                    </div>
+                </div>
                 <p className='text-lg text-center mt-5 text-white'>
                     {user.title}
                 </p>
