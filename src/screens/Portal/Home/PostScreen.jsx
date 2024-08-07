@@ -1,11 +1,13 @@
 import { useEffect, useState } from 'react'
-import { useLocation, useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate, useParams } from 'react-router-dom'
 import TopNavBar from '../../../utils/components/TopNavbar'
 import ScrollToLeft from '../../../utils/animations/ScrollToLeft'
+import axios from 'axios'
 
 const PostScreen = () => {
     const webLocation = useLocation()
     const navigate = useNavigate()
+    const { _id } = useParams()
 
     const [post, setPost] = useState(
         {
@@ -15,7 +17,6 @@ const PostScreen = () => {
             experienceLevel: '',
             experienceLength: '',
             skills: '',
-            applications: '',
             location: '',
             organisationLogo: '',
             organisationName: '',
@@ -29,9 +30,40 @@ const PostScreen = () => {
         })
 
     useEffect(() => {
-        console.log(webLocation.state.post);
-        setPost(webLocation.state.post)
+        // No Stored post, coming from a link or so
+        if (webLocation.state.post == '') {
+            axios.get(`${import.meta.env.VITE_API_URL}/dashboard/search/${_id}`).then((result) => {
+                console.log(result);
+            }).catch((err) => {
+                console.log(err);
+            });
+        }
+
+        // Coming from Homscreen
+        else {
+            setPost(webLocation.state.post)
+        }
     }, [])
+
+
+    function applyForPost() {
+        let post_id = _id
+        let userEmail = localStorage.getItem("USER_EMAIL")
+
+        // If signup succesful notify user if no userEmail found go to signup
+        axios.put(`${import.meta.env.VITE_API_URL}/dashboard/apply/${post_id}`, { userEmail })
+            .then((result) => {
+                console.log(result);
+            }).catch((err) => {
+                // User doesn't exist
+                if (err.response?.status == 404) {
+                    navigate('/signup')
+                }
+                else if (err.response?.status == 500) {
+                    alert('Server Error Contact the management')
+                }
+            });
+    }
 
     return (
         <ScrollToLeft className="w-screen bg-white flex mb-10">
@@ -108,8 +140,8 @@ const PostScreen = () => {
                 </div>
 
 
-                <div to={'123'} className="w-full bg-primary text-white font-kanit flex justify-center items-center rounded-lg p-3 text-xl">
-                    Contact
+                <div to={'123'} className="w-full bg-primary text-white font-kanit flex justify-center items-center rounded-lg p-3 text-xl" onClick={applyForPost}>
+                    Apply
                 </div>
 
             </div>

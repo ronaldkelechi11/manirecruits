@@ -46,8 +46,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       {/* Home Route */}
       <Route path='/home'>
         <Route index element={<Home />} />
-
-        <Route path=":number" element={<PostScreen />} />
+        <Route path=":_id" element={<PostScreen />} />
       </Route>
 
       {/* Setting(Settings and User profile) */}

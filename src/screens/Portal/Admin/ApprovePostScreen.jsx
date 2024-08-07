@@ -17,7 +17,6 @@ const ApprovePostScreen = () => {
             experienceLevel: '',
             experienceLength: '',
             skills: '',
-            applications: '',
             location: '',
             organisationLogo: '',
             organisationName: '',
