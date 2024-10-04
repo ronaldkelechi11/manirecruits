@@ -1,4 +1,4 @@
-import { Bell, Home1, Message, Setting, User1 } from "@iconsans/react/linear"
+import { Home1, Message, User1 } from "@iconsans/react/linear"
 import { NavLink, } from "react-router-dom"
 
 const AdminBottonNavBar = () => {
@@ -15,12 +15,12 @@ const AdminBottonNavBar = () => {
 
 
             {/* User Management */}
-            <NavLink to={'/'} className="h-full w-full text-3xl flex justify-center items-center text-slate-500">
+            <NavLink to={'#'} className="h-full w-full text-3xl flex justify-center items-center text-slate-500">
                 <User1 />
             </NavLink>
 
             {/* Post Management */}
-            <NavLink to={'/'} className="h-full w-full text-3xl flex justify-center items-center text-slate-500">
+            <NavLink to={'#'} className="h-full w-full text-3xl flex justify-center items-center text-slate-500">
                 <Message />
             </NavLink>
 
