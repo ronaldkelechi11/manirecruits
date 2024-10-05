@@ -55,12 +55,6 @@ const Settings = () => {
     return (
         <div className='w-screen flex mb-20 flex-col bg-primary'>
 
-            {/* Just an extra buttton */}
-            <div className="text-white text-4xl fixed top-0 left-0 p-5"
-                onClick={() => { navigate('/home') }}>
-                <ArrowLeft />
-            </div>
-
             {/* Show followers and following */}
             <div className="h-64 w-full bg-primary flex flex-col justify-center items-center font-kanit text-white p-5">
                 <p className='text-2xl text-slate-200'>Hello,👋</p>

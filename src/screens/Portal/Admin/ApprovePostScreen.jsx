@@ -26,6 +26,11 @@ const ApprovePostScreen = () => {
             salaryRange: '',
             prefferedGender: '',
             plusCommision: '',
+            contactInformation: {
+                contactEmail: '',
+                contactNumber: '',
+                contactWhatsapp: ''
+            },
             workingDays: []
         }
     )
@@ -117,6 +122,13 @@ const ApprovePostScreen = () => {
                         post.skills
                     }
                 </p>
+
+
+                <p> <strong>Contact Email: </strong>
+                    <a href="mailto:" className='underline'>{post.contactInformation.contactEmail}</a>
+                </p>
+                <p><strong>Contact Number: </strong> +234 {post.contactInformation.contactNumber}</p>
+
 
                 <div className="flex flex-row items-center gap-3 text-[8px] text-slate-400">Post uploaded: {post.jobUploadDate}</div>
 

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { useLocation, useNavigate, useParams } from 'react-router-dom'
+import { Link, useLocation, useNavigate, useParams } from 'react-router-dom'
 import TopNavBar from '../../../utils/components/TopNavbar'
 import ScrollToLeft from '../../../utils/animations/ScrollToLeft'
 import axios from 'axios'
@@ -8,6 +8,9 @@ const PostScreen = () => {
     const webLocation = useLocation()
     const navigate = useNavigate()
     const { _id } = useParams()
+
+    const [showContactInfo, setShowContactInfo] = useState(false);
+    const [whatsappLink, setWhatsappLink] = useState("")
 
     const [post, setPost] = useState(
         {
@@ -26,6 +29,11 @@ const PostScreen = () => {
             salaryRange: '',
             prefferedGender: '',
             plusCommision: '',
+            contactInformation: {
+                contactEmail: '',
+                contactNumber: '',
+                contactWhatsapp: ''
+            },
             workingDays: []
         })
 
@@ -47,22 +55,7 @@ const PostScreen = () => {
 
 
     function applyForPost() {
-        let post_id = _id
-        let userEmail = localStorage.getItem("USER_EMAIL")
-
-        // If signup succesful notify user if no userEmail found go to signup
-        axios.put(`${import.meta.env.VITE_API_URL}/dashboard/apply/${post_id}`, { userEmail })
-            .then((result) => {
-                console.log(result);
-            }).catch((err) => {
-                // User doesn't exist
-                if (err.response?.status == 404) {
-                    navigate('/signup')
-                }
-                else if (err.response?.status == 500) {
-                    alert('Server Error Contact the management')
-                }
-            });
+        setShowContactInfo(true)
     }
 
     return (
@@ -134,15 +127,30 @@ const PostScreen = () => {
                     }
                 </p>
 
-
-                <div className="flex flex-row items-center gap-3 text-sm text-slate-400">
+                <div className="flex flex-row items-center gap-3 text-[8px] text-slate-400">
                     Post uploaded: {post?.jobUploadDate}
                 </div>
 
+                {showContactInfo && (
+                    <div className="flex flex-col gap-3 bg-gray-100 rounded-lg p-3">
+                        <p> <strong>Contact Email: </strong>
+                            <a href="mailto:" className='underline'>{post.contactInformation.contactEmail}</a>
+                        </p>
 
-                <div to={'123'} className="w-full bg-primary text-white font-kanit flex justify-center items-center rounded-lg p-3 text-xl" onClick={applyForPost}>
-                    Apply
-                </div>
+                        <p><strong>Contact Number: </strong>
+                            <a href="phone:"></a>{post.contactInformation.contactNumber}
+                        </p>
+                    </div>
+                )
+                }
+
+
+                {!showContactInfo && (
+                    <div className="w-full bg-primary text-white font-kanit flex justify-center items-center rounded-lg p-3 text-xl" onClick={applyForPost}>
+                        Apply
+                    </div>
+                )
+                }
 
             </div>
 

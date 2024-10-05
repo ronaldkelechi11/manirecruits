@@ -52,8 +52,8 @@ const SignUpThree = () => {
         <ScrollToLeft className="w-screen h-screen bg-white flex flex-col justify-center items-center">
 
 
-            <div className="flex flex-col w-full">
-                <p className="text-6xl font-kanit text-center text-primary">What next?</p>
+            <div className="flex flex-col w-full h-full p-3">
+                <p className="md:text-6xl text-3xl font-kanit text-center text-primary">What next?</p>
                 <p className="text-xl p-3 font-kanit text-center text-gray-400">
                     Just getting some more information, we&apos;ll be done in a bit
                 </p>

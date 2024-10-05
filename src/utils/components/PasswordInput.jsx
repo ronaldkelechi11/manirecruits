@@ -20,7 +20,7 @@ const PasswordInput = ({ value, onChange, error, placeholder, ...props }) => {
                 value={value}
                 onChange={onChange} />
 
-            <div className="text-2xl text-grey" onClick={(e) => { setIsPassword(!isPassword) }} >
+            <div className="text-2xl text-grey cursor-pointer" onClick={(e) => { setIsPassword(!isPassword) }} >
                 {isPassword ? <EyeSlash /> : <Eye />}
             </div>
 

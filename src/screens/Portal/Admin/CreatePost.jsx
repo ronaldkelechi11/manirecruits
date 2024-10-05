@@ -39,6 +39,10 @@ const CreatePost = () => {
     const [plusCommision, setPlusCommision] = useState(false)
     const [salaryCurrency, setSalaryCurrency] = useState("")
     const [workingDays, setWorkingDays] = useState([])
+    const [contactEmail, setContactEmail] = useState("")
+    const [contactNumber, setContactNumber] = useState("")
+    const [contactWhatsapp, setContactWhatsapp] = useState("")
+
 
     function addToWorkingDays(date) {
         // Search if the date is already on the list then if yes remove 0 if no add -1
@@ -83,6 +87,11 @@ const CreatePost = () => {
             prefferedGender: prefferedGender,
             plusCommision: plusCommision,
             salaryCurrency: salaryCurrency,
+            contactInformation: {
+                contactEmail,
+                contactNumber,
+                contactWhatsapp
+            },
             workingDays: workingDays
         }
 
@@ -157,6 +166,18 @@ const CreatePost = () => {
 
                 <textarea className='min-h-24 border-grey border p-5 rounded-lg' placeholder='Required Skills' value={skills} onChange={(e) => { setSkills(e.target.value) }} required></textarea>
 
+
+
+                {/* Contact Information */}
+                <p className='font-extrabold text-center'>Contact Details</p>
+
+                <NormalInput type={'text'} placeholder={'Contact Email Address'} value={contactEmail} onChange={(e) => { setContactEmail(e.target.value) }} />
+
+                <NormalInput type={'text'} placeholder={'Contact Phone Number'} value={contactNumber} onChange={(e) => { setContactNumber(e.target.value) }} />
+
+                <NormalInput type={'text'} placeholder={'Contact Whatsapp'} value={contactWhatsapp} onChange={(e) => { setContactWhatsapp(e.target.value) }} />
+
+
                 {/* Working Days */}
                 {/* Add working days arraylist instead */}
                 <div className="flex-col flex items-center border border-grey p-3">
@@ -173,6 +194,8 @@ const CreatePost = () => {
                         )
                     })}
                 </div>
+
+
 
                 <button type="submit" className='bg-primary text-white text-xl rounded-lg h-16 uppercase font-extrabold font-poppins'>Upload</button>
             </form>
