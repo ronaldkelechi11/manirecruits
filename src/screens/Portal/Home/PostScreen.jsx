@@ -54,8 +54,10 @@ const PostScreen = () => {
     }, [])
 
 
+
     function applyForPost() {
         setShowContactInfo(true)
+        setWhatsappLink(`https://wa.me/${post.contactInformation.contactWhatsapp}`)
     }
 
     return (
@@ -140,6 +142,8 @@ const PostScreen = () => {
                         <p><strong>Contact Number: </strong>
                             <a href="phone:"></a>{post.contactInformation.contactNumber}
                         </p>
+
+                        <p className='underline'><strong><a href={whatsappLink}>Chat on Whatsapp</a></strong></p>
                     </div>
                 )
                 }

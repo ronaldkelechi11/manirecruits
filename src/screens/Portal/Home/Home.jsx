@@ -11,6 +11,7 @@ const Home = () => {
 
     const [posts, setPosts] = useState([])
 
+    // TODO: Check to make sure only 30 posts are fetched at a time
     useEffect(() => {
         axios.get(`${import.meta.env.VITE_API_URL}/dashboard/home`).
             then(({ data }) => {
